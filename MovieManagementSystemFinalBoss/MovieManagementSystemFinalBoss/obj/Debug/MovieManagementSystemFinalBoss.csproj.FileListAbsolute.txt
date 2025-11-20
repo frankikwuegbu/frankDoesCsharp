@@ -6,3 +6,11 @@ C:\Users\frank.io\source\repos\MovieManagementSystemFinalBoss\MovieManagementSys
 C:\Users\frank.io\source\repos\MovieManagementSystemFinalBoss\MovieManagementSystemFinalBoss\obj\Debug\MovieManagementSystemFinalBoss.exe
 C:\Users\frank.io\source\repos\MovieManagementSystemFinalBoss\MovieManagementSystemFinalBoss\obj\Debug\MovieManagementSystemFinalBoss.pdb
 C:\Users\frank.io\source\repos\MovieManagementSystemFinalBoss\MovieManagementSystemFinalBoss\obj\Debug\MovieManagementSystemFinalBoss.exe.config
+C:\Users\frank.io\source\repos\frankDoesCSharp\MovieManagementSystemFinalBoss\MovieManagementSystemFinalBoss\bin\Debug\MovieManagementSystemFinalBoss.exe.config
+C:\Users\frank.io\source\repos\frankDoesCSharp\MovieManagementSystemFinalBoss\MovieManagementSystemFinalBoss\bin\Debug\MovieManagementSystemFinalBoss.exe
+C:\Users\frank.io\source\repos\frankDoesCSharp\MovieManagementSystemFinalBoss\MovieManagementSystemFinalBoss\bin\Debug\MovieManagementSystemFinalBoss.pdb
+C:\Users\frank.io\source\repos\frankDoesCSharp\MovieManagementSystemFinalBoss\MovieManagementSystemFinalBoss\obj\Debug\MovieManagementSystemFinalBoss.csproj.AssemblyReference.cache
+C:\Users\frank.io\source\repos\frankDoesCSharp\MovieManagementSystemFinalBoss\MovieManagementSystemFinalBoss\obj\Debug\MovieManagementSystemFinalBoss.exe.config
+C:\Users\frank.io\source\repos\frankDoesCSharp\MovieManagementSystemFinalBoss\MovieManagementSystemFinalBoss\obj\Debug\MovieManagementSystemFinalBoss.csproj.CoreCompileInputs.cache
+C:\Users\frank.io\source\repos\frankDoesCSharp\MovieManagementSystemFinalBoss\MovieManagementSystemFinalBoss\obj\Debug\MovieManagementSystemFinalBoss.exe
+C:\Users\frank.io\source\repos\frankDoesCSharp\MovieManagementSystemFinalBoss\MovieManagementSystemFinalBoss\obj\Debug\MovieManagementSystemFinalBoss.pdb

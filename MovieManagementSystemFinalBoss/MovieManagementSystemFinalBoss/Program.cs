@@ -47,7 +47,8 @@ namespace MovieManagementSystemFinalBoss
         }
     }
 
-    class Series: Movies
+    //series class UNDER CONSTRUCTION!
+    /*class Series : Movies
     {
         public string LeadAct { get; set; }
 
@@ -60,151 +61,136 @@ namespace MovieManagementSystemFinalBoss
             string mainCharacter = Console.ReadLine();
             LeadAct = mainCharacter;
         }
-
         public Series()
         {
             MovieDetails();
         }
-    }
+    }*/
 
-    abstract class Member
+    //Member class
+    class Member
     {
         public string Name { get; set; }
+        public enum Login { asUser = 1, asGuest = 2}    //enum: members can login as user or guest
+        public Login Privilege { get; set; }    //property with enum type
 
-        public Member(string name) { Name = name; }
+        //constructor
+        public Member()
+        {
+            Console.Write("enter name: ");
+            string name = Console.ReadLine();
+            Name = name;
+        }
 
         public List<Movies> movieList = new List<Movies>();
-        public abstract Movies AddMovie();
-        
-        public abstract void ShowMovies();
-        public abstract void LoginMessage();
-    }
 
-    class Guest : Member
-    {
-        public Guest(string name) : base(name) { }
-
-        public override Movies AddMovie()
+        //what can members do?
+        public Movies AddMovie()
         {
             Movies movie = new Movies();
             movieList.Add(movie);
-            Console.WriteLine(movie);
 
             return movie;
         }
-
-        public override void ShowMovies()
+        public void ShowMovies()
         {
             foreach (var item in movieList)
             {
                 Console.WriteLine(item.Title);
             }
         }
-
-        public override void LoginMessage()
+        public void RentMovies()
         {
-            Console.WriteLine($"{Name} logged in as guest!");
-        }
-    }
-
-    class User : Member
-    {
-        public User(string name) : base(name) { }
-        public override Movies AddMovie()
-        {
-            Movies movie = new Movies();
-            movieList.Add(movie);
-            Console.WriteLine("movie added!\n");
-
-            return movie;
-        }
-
-        public override void ShowMovies()
-        {
-            foreach (var item in movieList)
+            if (Privilege == Login.asUser)  //only users can rent a movie
             {
-                Console.WriteLine(item.Title);
-            }
-        }
-
-        public void RentMovie()
-        {
-            bool matchingTitle = false;
-            Console.Write("what movie do you want to rent: ");
-            string movieTitle = Console.ReadLine();
-            foreach (var item in movieList)
-            {
-                if (item.Title == movieTitle && item.IsRented == false)
+                bool matchingTitle = false;
+                Console.Write("what movie do you want to rent: ");
+                string movieTitle = Console.ReadLine();
+                foreach (var item in movieList)
                 {
-                    Console.WriteLine($"{movieTitle} is available to rent!");
-                    item.IsRented = true;
-                    matchingTitle = true;
+                    if (item.Title == movieTitle && item.IsRented == false)
+                    {
+                        Console.WriteLine($"{movieTitle} is available to rent!");
+                        item.IsRented = true;
+                        matchingTitle = true;
+                    }
+                    else if (item.Title == movieTitle && item.IsRented == true)
+                    {
+                        Console.WriteLine($"{movieTitle} has already been rented by you!");
+                        matchingTitle = true;
+                    }
                 }
-                else if (item.Title == movieTitle && item.IsRented == true)
+                if (!matchingTitle)
                 {
-                    Console.WriteLine($"{movieTitle} has already been rented by you!");
-                    matchingTitle = true;
+                    Console.WriteLine($"{movieTitle} NOT FOUND!");
                 }
             }
-            if (!matchingTitle)
+            else
             {
-                Console.WriteLine($"{movieTitle} NOT FOUND!");
+                Console.WriteLine("sorry, guest cannot rent a movie!");
             }
         }
-        public override void LoginMessage()
+        public void LoginMessage()
         {
-            Console.WriteLine($"welcome, {Name}");
+            if (Privilege == Login.asUser)
+            {
+                Console.WriteLine($"welcome, {Name}");
+            }
+            else
+            {
+                Console.WriteLine($"{Name} logged in as guest!");
+            }
         }
     }
-
     internal class Program
     {
         static void Main(string[] args)
         {
-            dynamic user;
+            Member user;
 
             Console.Write("1. user\n2. guest\nselect login type: ");
             int login = Convert.ToInt32( Console.ReadLine() );
 
-            if (login == 1) { user = NewUser(); } else { user = NewGuest(); }
+            user = NewMember(login);
 
             Console.Write("1. add movie \n2 show movies\n3 rent a movie" +
-                          "\nselect action: ");
+                          "\n0. log out\nselect action: ");
             int press = Convert.ToInt32(Console.ReadLine());
 
             while (press != 0)
             {
                 if (press == 1) { user.AddMovie(); }
                 else if (press == 2) { user.ShowMovies(); }
-                else if (press == 3) { user.RentMovie(); }
+                else if (press == 3) { user.RentMovies(); }
 
                 Console.Write("select operation: ");
                 press = Convert.ToInt32(Console.ReadLine());
             }
+            Console.WriteLine($"{user.Name} logging out...");
 
             Console.ReadLine();
         }
 
-        static User NewUser()
+        //creates members
+        static Member NewMember(int loginPrivilege)
         {
-            Console.Write("username: ");
-            string userName = Console.ReadLine();
+            Member member = new Member();
 
-            var user = new User(userName);
-            user.LoginMessage();
-            //Console.WriteLine(user);
-            return user;
-        }
+            if (loginPrivilege == (int)Member.Login.asUser)
+            {
+                member.Privilege = Member.Login.asUser;
+            }
+            else if (loginPrivilege == (int)Member.Login.asGuest)
+            {
+                member.Privilege = Member.Login.asGuest;
+            }
+            else
+            {
+                Console.WriteLine("select correct login privilege");
+            }
 
-        static Guest NewGuest()
-        {
-            Console.Write("guest name: ");
-            string guestName = Console.ReadLine();
-
-            var guest = new Guest(guestName);
-            guest.LoginMessage();
-            //Console.WriteLine(user);
-            return guest;
+            member.LoginMessage();
+            return member;
         }
     }
 }
