@@ -1,0 +1,8 @@
+C:\Users\frank.io\source\repos\enumInClass\enumInClass\bin\Debug\enumInClass.exe.config
+C:\Users\frank.io\source\repos\enumInClass\enumInClass\bin\Debug\enumInClass.exe
+C:\Users\frank.io\source\repos\enumInClass\enumInClass\bin\Debug\enumInClass.pdb
+C:\Users\frank.io\source\repos\enumInClass\enumInClass\obj\Debug\enumInClass.csproj.AssemblyReference.cache
+C:\Users\frank.io\source\repos\enumInClass\enumInClass\obj\Debug\enumInClass.csproj.CoreCompileInputs.cache
+C:\Users\frank.io\source\repos\enumInClass\enumInClass\obj\Debug\enumInClass.exe
+C:\Users\frank.io\source\repos\enumInClass\enumInClass\obj\Debug\enumInClass.pdb
+C:\Users\frank.io\source\repos\enumInClass\enumInClass\obj\Debug\enumInClass.exe.config
