@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36616.10 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieManagementSystemFinalBoss", "MovieManagementSystemFinalBoss\MovieManagementSystemFinalBoss.csproj", "{61DDFC76-0654-4203-8511-C30E33C6A15F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{61DDFC76-0654-4203-8511-C30E33C6A15F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61DDFC76-0654-4203-8511-C30E33C6A15F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61DDFC76-0654-4203-8511-C30E33C6A15F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61DDFC76-0654-4203-8511-C30E33C6A15F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BF772F5F-656E-4A0D-BD16-F70BD588DB49}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,8 @@
+C:\Users\frank.io\source\repos\tryingthings\tryingthings\bin\Debug\tryingthings.exe.config
+C:\Users\frank.io\source\repos\tryingthings\tryingthings\bin\Debug\tryingthings.exe
+C:\Users\frank.io\source\repos\tryingthings\tryingthings\bin\Debug\tryingthings.pdb
+C:\Users\frank.io\source\repos\tryingthings\tryingthings\obj\Debug\tryingthings.csproj.AssemblyReference.cache
+C:\Users\frank.io\source\repos\tryingthings\tryingthings\obj\Debug\tryingthings.csproj.CoreCompileInputs.cache
+C:\Users\frank.io\source\repos\tryingthings\tryingthings\obj\Debug\tryingthings.exe
+C:\Users\frank.io\source\repos\tryingthings\tryingthings\obj\Debug\tryingthings.pdb
+C:\Users\frank.io\source\repos\tryingthings\tryingthings\obj\Debug\tryingthings.exe.config
