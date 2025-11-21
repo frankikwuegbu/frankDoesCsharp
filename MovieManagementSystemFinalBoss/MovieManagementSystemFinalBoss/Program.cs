@@ -67,11 +67,12 @@ namespace MovieManagementSystemFinalBoss
         }
     }*/
 
+    enum Login { AsUser = 1, AsGuest = 2 }
+
     //Member class
     class Member
     {
         public string Name { get; set; }
-        public enum Login { asUser = 1, asGuest = 2}    //enum: members can login as user or guest
         public Login Privilege { get; set; }    //property with enum type
 
         //constructor
@@ -101,7 +102,7 @@ namespace MovieManagementSystemFinalBoss
         }
         public void RentMovies()
         {
-            if (Privilege == Login.asUser)  //only users can rent a movie
+            if (Privilege == Login.AsUser)  //only users can rent a movie
             {
                 bool matchingTitle = false;
                 Console.Write("what movie do you want to rent: ");
@@ -132,7 +133,7 @@ namespace MovieManagementSystemFinalBoss
         }
         public void LoginMessage()
         {
-            if (Privilege == Login.asUser)
+            if (Privilege == Login.AsUser)
             {
                 Console.WriteLine($"welcome, {Name}");
             }
@@ -176,13 +177,13 @@ namespace MovieManagementSystemFinalBoss
         {
             Member member = new Member();
 
-            if (loginPrivilege == (int)Member.Login.asUser)
+            if (loginPrivilege == (int)Login.AsUser)
             {
-                member.Privilege = Member.Login.asUser;
+                member.Privilege = Login.AsUser;
             }
-            else if (loginPrivilege == (int)Member.Login.asGuest)
+            else if (loginPrivilege == (int)Login.AsGuest)
             {
-                member.Privilege = Member.Login.asGuest;
+                member.Privilege = Login.AsGuest;
             }
             else
             {
