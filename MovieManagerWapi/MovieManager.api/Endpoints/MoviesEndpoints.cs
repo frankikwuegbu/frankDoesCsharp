@@ -10,15 +10,13 @@ public static class MoviesEndpoints
 
     public static RouteGroupBuilder MapMoviesEndpoint(this IEndpointRouteBuilder route)
     {
-        MoviesRepository repository = new();
-
         var group = route.MapGroup("/movies").WithParameterValidation();
 
         //get all movies on list
-        group.MapGet("/", () => repository.GetAll());
+        group.MapGet("/", (IMoviesRepository repository) => repository.GetAll());
 
         //get single movie by id
-        group.MapGet("/{id}", (int id) =>
+        group.MapGet("/{id}", (IMoviesRepository repository, int id) =>
         {
             Movies? movie = repository.Get(id);
 
@@ -27,7 +25,7 @@ public static class MoviesEndpoints
         .WithName(GetMoviesEndpoint);
 
         //add new movie to list
-        group.MapPost("/", (Movies movie) =>
+        group.MapPost("/", (IMoviesRepository repository, Movies movie) =>
         {
             repository.Create(movie);
 
@@ -35,7 +33,7 @@ public static class MoviesEndpoints
         });
 
         //update existing movie
-        group.MapPut("/{id}", (int id, Movies updatedMovie) =>
+        group.MapPut("/{id}", (IMoviesRepository repository, int id, Movies updatedMovie) =>
         {
             Movies? existingMovie = repository.Get(id);
 
@@ -54,7 +52,7 @@ public static class MoviesEndpoints
         });
 
         //delete movie
-        group.MapDelete("/{id}", (int id) =>
+        group.MapDelete("/{id}", (IMoviesRepository repository, int id) =>
         {
             Movies? movie = repository.Get(id);
 

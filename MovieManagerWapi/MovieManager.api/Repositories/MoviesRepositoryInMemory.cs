@@ -1,8 +1,7 @@
 using MovieManager.api.Entities;
 
 namespace MovieManager.api.Repositories;
-
-public class MoviesRepository
+public class MoviesRepositoryInMemory : IMoviesRepository
 {
     private readonly List<Movies> movies = new()
 {
