@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "B7debLxJwgs=",
+  "dgSpecHash": "9ZwO5b+coOo=",
   "success": true,
-  "projectFilePath": "C:\\Users\\frank.io\\source\\repos\\MovieManagerWapi\\MovieManager.api\\MovieManager.api.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\frank.io\\source\\repos\\frankDoesCSharp\\MovieManagerWapi\\MovieManager.api\\MovieManager.api.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\frank.io\\.nuget\\packages\\microsoft.openapi\\1.4.3\\microsoft.openapi.1.4.3.nupkg.sha512",
+    "C:\\Users\\frank.io\\.nuget\\packages\\minimalapis.extensions\\0.11.0\\minimalapis.extensions.0.11.0.nupkg.sha512",
+    "C:\\Users\\frank.io\\.nuget\\packages\\minivalidation\\0.8.0\\minivalidation.0.8.0.nupkg.sha512"
+  ],
   "logs": []
 }

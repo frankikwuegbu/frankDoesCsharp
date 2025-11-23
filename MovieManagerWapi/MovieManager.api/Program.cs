@@ -1,6 +1,6 @@
 using MovieManager.api.Entities;
 
-const string GetMoviesEndpointName = "GetMovies";
+const string GetMoviesEndpoint = "GetMovies";
 
 List<Movies> movies = new()
 {
@@ -35,9 +35,11 @@ List<Movies> movies = new()
 var builder = WebApplication.CreateBuilder(args);
 var app = builder.Build();
 
-app.MapGet("/movies", () => movies);
+var group = app.MapGroup("/movies").WithParameterValidation();
 
-app.MapGet("/movies/{id}", (int id) =>
+group.MapGet("/", () => movies);
+
+group.MapGet("/{id}", (int id) =>
 {
     Movies? movie = movies.Find(movie => movie.Id == id);
 
@@ -47,17 +49,17 @@ app.MapGet("/movies/{id}", (int id) =>
     }
     return Results.Ok(movie);
 })
-.WithName(GetMoviesEndpointName);
+.WithName(GetMoviesEndpoint);
 
-app.MapPost("/movies", (Movies movie) =>
+group.MapPost("/", (Movies movie) =>
 {
     movie.Id = movies.Max(movie => movie.Id) + 1;
     movies.Add(movie);
 
-    return Results.CreatedAtRoute(GetMoviesEndpointName, new { id = movie.Id }, movie);
+    return Results.CreatedAtRoute(GetMoviesEndpoint, new { id = movie.Id }, movie);
 });
 
-app.MapPut("/movies/{id}", (int id, Movies updatedMovie) =>
+group.MapPut("/{id}", (int id, Movies updatedMovie) =>
 {
     Movies? existingMovie = movies.Find(existingMovie => existingMovie.Id == id);
 
@@ -73,7 +75,7 @@ app.MapPut("/movies/{id}", (int id, Movies updatedMovie) =>
     return Results.NoContent();
 });
 
-app.MapDelete("/movies/{id}", (int id) =>
+group.MapDelete("/{id}", (int id) =>
 {
     Movies? movie = movies.Find(movie => movie.Id == id);
 
