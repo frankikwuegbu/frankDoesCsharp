@@ -4,9 +4,9 @@ namespace MovieManager.api.Repositories;
 
 public interface IMoviesRepository
 {
-    void Create(Movies movie);
-    void Delete(int id);
-    Movies? Get(int id);
-    IEnumerable<Movies> GetAll();
-    void Update(Movies updatedMovie);
+    Task CreateAsyn(Movies movie);
+    Task DeleteAsync(int id);
+    Task<Movies?> GetAsync(int id);
+    Task<IEnumerable<Movies>> GetAllAsync();
+    Task UpdateAsync(Movies updatedMovie);
 }

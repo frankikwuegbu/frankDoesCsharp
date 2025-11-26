@@ -1,10 +1,15 @@
+using MovieManager.api.Data;
 using MovieManager.api.Endpoints;
-using MovieManager.api.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
-builder.Services.AddSingleton<IMoviesRepository, MoviesRepositoryInMemory>();
+
+//implementing IMoviesRepository
+builder.Services.AddRepository(builder.Configuration);
 
 var app = builder.Build();
+
+//applies migration if needed
+await app.Services.InitializeDbAsync();
 
 app.MapMoviesEndpoint();
 

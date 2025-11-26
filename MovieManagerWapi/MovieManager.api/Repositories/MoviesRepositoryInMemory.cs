@@ -1,6 +1,7 @@
 using MovieManager.api.Entities;
 
 namespace MovieManager.api.Repositories;
+
 public class MoviesRepositoryInMemory : IMoviesRepository
 {
     private readonly List<Movies> movies = new()
@@ -34,35 +35,41 @@ public class MoviesRepositoryInMemory : IMoviesRepository
 };
 
     //returns all movies in the list
-    public IEnumerable<Movies> GetAll()
+    public async Task<IEnumerable<Movies>> GetAllAsync()
     {
-        return movies;
+        return await Task.FromResult(movies);
     }
 
     //returns a single movie
-    public Movies? Get(int id)
+    public async Task<Movies?> GetAsync(int id)
     {
-        return movies.Find(movie => movie.Id == id);
+        return await Task.FromResult(movies.Find(movie => movie.Id == id));
     }
 
     //add new movie
-    public void Create(Movies movie)
+    public async Task CreateAsyn(Movies movie)
     {
         movie.Id = movies.Max(movie => movie.Id) + 1;
         movies.Add(movie);
+
+        await Task.CompletedTask;
     }
 
     //update movie at index
-    public void Update(Movies updatedMovie)
+    public async Task UpdateAsync(Movies updatedMovie)
     {
         var index = movies.FindIndex(movie => movie.Id == updatedMovie.Id);
         movies[index] = updatedMovie;
+
+        await Task.CompletedTask;
     }
 
     //delete movie at index
-    public void Delete(int id)
+    public async Task DeleteAsync(int id)
     {
         var index = movies.FindIndex(movie => movie.Id == id);
         movies.RemoveAt(index);
+
+        await Task.CompletedTask;
     }
 }

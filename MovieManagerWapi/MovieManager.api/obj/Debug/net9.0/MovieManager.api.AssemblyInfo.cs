@@ -10,10 +10,11 @@
 using System;
 using System.Reflection;
 
+[assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("3202ecca-1dc6-443a-81c5-aacbe4f6415f")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("MovieManager.api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f08191db61d369725498ca06bc42b20da5afc625")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2146d1ad6c2689b8631464b3a32afc85398375ac")]
 [assembly: System.Reflection.AssemblyProductAttribute("MovieManager.api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MovieManager.api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

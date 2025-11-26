@@ -1,4 +1,5 @@
 using System.Text.RegularExpressions;
+using MovieManager.api.dto;
 using MovieManager.api.Entities;
 using MovieManager.api.Repositories;
 
@@ -13,52 +14,60 @@ public static class MoviesEndpoints
         var group = route.MapGroup("/movies").WithParameterValidation();
 
         //get all movies on list
-        group.MapGet("/", (IMoviesRepository repository) => repository.GetAll());
+        group.MapGet("/", async (IMoviesRepository repository)
+                    => (await repository.GetAllAsync()).Select(movie => movie.AsDto()));
 
         //get single movie by id
-        group.MapGet("/{id}", (IMoviesRepository repository, int id) =>
+        group.MapGet("/{id}", async (IMoviesRepository repository, int id) =>
         {
-            Movies? movie = repository.Get(id);
+            Movies? movie = await repository.GetAsync(id);
 
-            return movie is not null ? Results.Ok(movie) : Results.NotFound();
+            return movie is not null ? Results.Ok(movie.AsDto()) : Results.NotFound();
         })
         .WithName(GetMoviesEndpoint);
 
         //add new movie to list
-        group.MapPost("/", (IMoviesRepository repository, Movies movie) =>
+        group.MapPost("/", async (IMoviesRepository repository, CreateMoviesDto movieDto) =>
         {
-            repository.Create(movie);
+            Movies movie = new Movies()
+            {
+                Title = movieDto.Title,
+                Genre = movieDto.Genre,
+                ReleaseYear = movieDto.ReleaseYear,
+                ImageUrl = movieDto.ImageUrl
+            };
+            await repository.CreateAsyn(movie);
 
             return Results.CreatedAtRoute(GetMoviesEndpoint, new { id = movie.Id }, movie);
         });
 
         //update existing movie
-        group.MapPut("/{id}", (IMoviesRepository repository, int id, Movies updatedMovie) =>
+        group.MapPut("/{id}", async (IMoviesRepository repository, int id, UpdateMoviesDto updatedMovieDto) =>
         {
-            Movies? existingMovie = repository.Get(id);
+            Movies? existingMovie = await repository.GetAsync(id);
 
             if (existingMovie == null)
             {
                 Results.NotFound();
             }
 
-            existingMovie.Title = updatedMovie.Title;
-            existingMovie.Genre = updatedMovie.Genre;
-            existingMovie.ReleaseYear = updatedMovie.ReleaseYear;
+            existingMovie.Title = updatedMovieDto.Title;
+            existingMovie.Genre = updatedMovieDto.Genre;
+            existingMovie.ReleaseYear = updatedMovieDto.ReleaseYear;
 
-            repository.Update(existingMovie);
+            await repository.UpdateAsync(existingMovie);
 
             return Results.NoContent();
         });
 
         //delete movie
-        group.MapDelete("/{id}", (IMoviesRepository repository, int id) =>
+        group.MapDelete("/{id}", async (IMoviesRepository repository, int id) =>
         {
-            Movies? movie = repository.Get(id);
+            Movies? movie = await repository.GetAsync(id);
 
             if (movie != null)
             {
-                repository.Delete(id);
+                await repository.DeleteAsync(id);
             }
 
             return Results.NoContent();
