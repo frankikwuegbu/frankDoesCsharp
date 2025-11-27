@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "VTllUU8Np4Q=",
+  "dgSpecHash": "FaeyPFPQo4o=",
   "success": true,
-  "projectFilePath": "C:\\Users\\frank.io\\source\\repos\\frankDoesCSharp\\MovieManagerWapi\\moviemanager.api\\MovieManager.api.csproj",
+  "projectFilePath": "C:\\Users\\frank.io\\source\\repos\\frankDoesCSharp\\MovieManagerWapi\\MovieManager.api\\MovieManager.api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\frank.io\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\frank.io\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",
