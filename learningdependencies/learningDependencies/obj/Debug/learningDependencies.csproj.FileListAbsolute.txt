@@ -6,3 +6,11 @@ C:\Users\frank.io\source\repos\learningDependencies\learningDependencies\obj\Deb
 C:\Users\frank.io\source\repos\learningDependencies\learningDependencies\obj\Debug\learningDependencies.exe
 C:\Users\frank.io\source\repos\learningDependencies\learningDependencies\obj\Debug\learningDependencies.pdb
 C:\Users\frank.io\source\repos\learningDependencies\learningDependencies\obj\Debug\learningDependencies.exe.config
+C:\Users\frank.io\source\repos\frankDoesCSharp\learningdependencies\learningDependencies\bin\Debug\learningDependencies.exe.config
+C:\Users\frank.io\source\repos\frankDoesCSharp\learningdependencies\learningDependencies\bin\Debug\learningDependencies.exe
+C:\Users\frank.io\source\repos\frankDoesCSharp\learningdependencies\learningDependencies\bin\Debug\learningDependencies.pdb
+C:\Users\frank.io\source\repos\frankDoesCSharp\learningdependencies\learningDependencies\obj\Debug\learningDependencies.csproj.AssemblyReference.cache
+C:\Users\frank.io\source\repos\frankDoesCSharp\learningdependencies\learningDependencies\obj\Debug\learningDependencies.exe.config
+C:\Users\frank.io\source\repos\frankDoesCSharp\learningdependencies\learningDependencies\obj\Debug\learningDependencies.csproj.CoreCompileInputs.cache
+C:\Users\frank.io\source\repos\frankDoesCSharp\learningdependencies\learningDependencies\obj\Debug\learningDependencies.exe
+C:\Users\frank.io\source\repos\frankDoesCSharp\learningdependencies\learningDependencies\obj\Debug\learningDependencies.pdb

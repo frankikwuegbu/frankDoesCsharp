@@ -4,20 +4,14 @@ namespace learningDependencies
 {
     public class Soldier
     {
-        private readonly Gun _gun;
-        private readonly Knife _knife;
+        public Gun Gun { get; set; }
+        public Knife Knife { get; set; }
 
-        //constructor dependency injection
-        public Soldier (Gun gun, Knife knife)
-        {
-            _gun = gun;
-            _knife = knife;
-        }
 
         public void GoToWar()
         {
-            _gun.Use();
-            _knife.Use();
+            Gun.Use();
+            Knife.Use();
             Console.WriteLine("the war has been won!");
         }
     }
@@ -41,9 +35,15 @@ namespace learningDependencies
     {
         static void Main(string[] args)
         {
+            //for setter dependency injection, the dependencies are created outside like so...
             Gun gun = new Gun();
             Knife knife = new Knife();
-            Soldier soldier = new Soldier(gun, knife);
+            Soldier soldier = new Soldier
+            {
+                //injecting the dependencies
+                Gun = gun,
+                Knife = knife
+            };
 
             soldier.GoToWar();
 

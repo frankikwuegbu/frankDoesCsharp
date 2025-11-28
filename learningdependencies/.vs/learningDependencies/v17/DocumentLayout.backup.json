@@ -1,9 +1,9 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\frank.io\\source\\repos\\learningDependencies\\",
+  "WorkspaceRootPath": "C:\\Users\\frank.io\\source\\repos\\frankDoesCSharp\\learningdependencies\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0C5D2C6E-9AD1-4A3C-B43C-118C68287BC7}|learningDependencies\\learningDependencies.csproj|c:\\users\\frank.io\\source\\repos\\learningdependencies\\learningdependencies\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0C5D2C6E-9AD1-4A3C-B43C-118C68287BC7}|learningDependencies\\learningDependencies.csproj|c:\\users\\frank.io\\source\\repos\\frankdoescsharp\\learningdependencies\\learningdependencies\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0C5D2C6E-9AD1-4A3C-B43C-118C68287BC7}|learningDependencies\\learningDependencies.csproj|solutionrelative:learningdependencies\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -24,11 +24,11 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\frank.io\\source\\repos\\learningDependencies\\learningDependencies\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\frank.io\\source\\repos\\frankDoesCSharp\\learningdependencies\\learningDependencies\\Program.cs",
               "RelativeDocumentMoniker": "learningDependencies\\Program.cs",
-              "ToolTip": "C:\\Users\\frank.io\\source\\repos\\learningDependencies\\learningDependencies\\Program.cs",
-              "RelativeToolTip": "learningDependencies\\Program.cs",
-              "ViewState": "AgIAACMAAAAAAAAAAAAswBEAAAAbAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\frank.io\\source\\repos\\frankDoesCSharp\\learningdependencies\\learningDependencies\\Program.cs*",
+              "RelativeToolTip": "learningDependencies\\Program.cs*",
+              "ViewState": "AgIAABwAAAAAAAAAAAA/wCoAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-28T11:11:14.607Z",
               "EditorCaption": ""
