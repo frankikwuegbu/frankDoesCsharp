@@ -2,17 +2,31 @@
 
 namespace learningDependencies
 {
-    public class Soldier
+    public interface IArsenal
     {
-        public Gun Gun { get; set; }
-        public Knife Knife { get; set; }
-
+        void UseGun(Gun gun);
+        void UseKnife(Knife knife);
+    }
+    public class Soldier: IArsenal
+    {
+        private Gun _gun;
+        private Knife _knife;
 
         public void GoToWar()
         {
-            Gun.Use();
-            Knife.Use();
+            _gun.Use();
+            _knife.Use();
             Console.WriteLine("the war has been won!");
+        }
+
+        public void UseGun(Gun gun)
+        {
+            _gun = gun;
+        }
+
+        public void UseKnife(Knife knife)
+        {
+            _knife = knife;
         }
     }
 
@@ -35,15 +49,12 @@ namespace learningDependencies
     {
         static void Main(string[] args)
         {
-            //for setter dependency injection, the dependencies are created outside like so...
             Gun gun = new Gun();
             Knife knife = new Knife();
-            Soldier soldier = new Soldier
-            {
-                //injecting the dependencies
-                Gun = gun,
-                Knife = knife
-            };
+            Soldier soldier = new Soldier();
+
+            soldier.UseGun(gun);
+            soldier.UseKnife(knife);
 
             soldier.GoToWar();
 
