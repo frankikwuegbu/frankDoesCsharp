@@ -41,4 +41,12 @@ public class PlayerController : ControllerBase
         },
             playerToReturn);
     }
+
+    [HttpDelete("{id:guid}")]
+    public IActionResult DeletePlayer(Guid teamId, Guid id)
+    {
+        _service.PlayerService.DeletePlayer(teamId, id, trackChanges: false);
+
+        return NoContent();
+    }
 }

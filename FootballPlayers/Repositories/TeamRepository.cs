@@ -23,4 +23,6 @@ public class TeamRepository : RepositoryBase<Team>, ITeamRepository
     public IEnumerable<Team> GetByIds(IEnumerable<Guid> ids, bool trackChanges) =>
         FindByCondition(x => ids.Contains(x.Id), trackChanges)
         .ToList();
+
+    public void DeleteTeam(Team team) => Delete(team);
 }

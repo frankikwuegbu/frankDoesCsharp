@@ -75,4 +75,13 @@ internal sealed class TeamService : ITeamService
 
         return (teams: teamCollectionToReturn, ids: ids);
     }
+
+    public void DeleteTeam(Guid teamId, bool trackChanges)
+    {
+        var team = _repository.Team.GetTeam(teamId, trackChanges);
+        if (team is null)
+            throw new TeamNotFoundException(teamId);
+        _repository.Team.DeleteTeam(team);
+        _repository.Save();
+    }
 }

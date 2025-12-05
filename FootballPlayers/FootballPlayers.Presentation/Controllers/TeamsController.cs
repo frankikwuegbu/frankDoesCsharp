@@ -53,4 +53,11 @@ public class TeamsController : ControllerBase
 
         return CreatedAtRoute("TeamCollection", new { result.ids }, result.teams);
     }
+
+    [HttpDelete("{id:guid}")]
+    public IActionResult DeleteTeam(Guid id)
+    {
+        _service.TeamService.DeleteTeam(id, trackChanges: false);
+        return NoContent();
+    }
 }

@@ -21,4 +21,6 @@ public class PlayerRepository : RepositoryBase<Player>, IPlayerRepository
         player.TeamId = teamId;
         Create(player);
     }
+
+    public void DeletePlayer(Player player) => Delete(player);
 }

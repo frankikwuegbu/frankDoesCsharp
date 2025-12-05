@@ -37,7 +37,7 @@ internal sealed class PlayerService : IPlayerService
 
         var playerDb = _repository.Player.GetPlayer(teamId, id, trackChanges);
         if (playerDb is null)
-            throw new PlayerNotFoundExcetption(id);
+            throw new PlayerNotFoundException(id);
 
         var player = _mapper.Map<PlayerDto>(playerDb);
         return player;
@@ -57,5 +57,19 @@ internal sealed class PlayerService : IPlayerService
         var playerToReturn = _mapper.Map<PlayerDto>(playerEntity);
 
         return playerToReturn;
+    }
+
+    public void DeletePlayer(Guid teamId, Guid id, bool trackChanges)
+    {
+        var team = _repository.Team.GetTeam(teamId, trackChanges);
+        if (team is null)
+            throw new TeamNotFoundException(teamId);
+
+        var playerForTeam = _repository.Player.GetPlayer(teamId, id, trackChanges);
+        if (playerForTeam is null)
+            throw new PlayerNotFoundException(id);
+
+        _repository.Player.DeletePlayer(playerForTeam);
+        _repository.Save();
     }
 }
