@@ -60,7 +60,28 @@
   },
   {
     "ContainingType": "FootballPlayers.Presentation.Controllers.PlayerController",
-    "Method": "GetPlayerForTeam",
+    "Method": "CreatePlayer",
+    "RelativePath": "api/teams/{teamId}/players",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "teamId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "player",
+        "Type": "Shared.DataTransferObjects.CreatePlayerDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FootballPlayers.Presentation.Controllers.PlayerController",
+    "Method": "GetPlayer",
     "RelativePath": "api/teams/{teamId}/players/{id}",
     "HttpMethod": "GET",
     "IsController": true,
@@ -77,6 +98,40 @@
         "IsRequired": true
       }
     ],
+    "ReturnTypes": [],
+    "EndpointName": "GetPlayer"
+  },
+  {
+    "ContainingType": "FootballPlayers.Presentation.Controllers.TeamsController",
+    "Method": "CreateTeamCollection",
+    "RelativePath": "api/teams/collection",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "teamCollection",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[Shared.DataTransferObjects.NewTeamDto, Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": true
+      }
+    ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FootballPlayers.Presentation.Controllers.TeamsController",
+    "Method": "GetTeamCollection",
+    "RelativePath": "api/teams/collection/({ids})",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "ids",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[System.Guid, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [],
+    "EndpointName": "TeamCollection"
   }
 ]

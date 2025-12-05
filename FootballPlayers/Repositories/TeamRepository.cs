@@ -19,4 +19,8 @@ public class TeamRepository : RepositoryBase<Team>, ITeamRepository
         .SingleOrDefault();
 
     public void CreateTeam(Team team) => Create(team);
+
+    public IEnumerable<Team> GetByIds(IEnumerable<Guid> ids, bool trackChanges) =>
+        FindByCondition(x => ids.Contains(x.Id), trackChanges)
+        .ToList();
 }

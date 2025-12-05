@@ -15,4 +15,10 @@ public class PlayerRepository : RepositoryBase<Player>, IPlayerRepository
     public Player GetPlayer(Guid teamId, Guid id, bool trackChanges) =>
         FindByCondition(p => p.TeamId.Equals(teamId) && p.Id.Equals(id), trackChanges)
         .SingleOrDefault();
+
+    public void CreatePlayer(Guid teamId, Player player)
+    {
+        player.TeamId = teamId;
+        Create(player);
+    }
 }

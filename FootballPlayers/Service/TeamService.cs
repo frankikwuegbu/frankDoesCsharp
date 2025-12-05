@@ -43,4 +43,36 @@ internal sealed class TeamService : ITeamService
         var teamToReturn = _mapper.Map<TeamDto>(teamEntity);
         return teamToReturn;
     }
+
+    public IEnumerable<TeamDto> GetByIds(IEnumerable<Guid> ids, bool trackChanges)
+    {
+        if (ids is null)
+            throw new IdParametersBadRequestException();
+        var teamEntities = _repository.Team.GetByIds(ids, trackChanges);
+        if (ids.Count() != teamEntities.Count())
+            throw new CollectionByIdsBadRequestException();
+        var teamsToReturn = _mapper.Map<IEnumerable<TeamDto>>(teamEntities);
+        return teamsToReturn;
+    }
+
+    public (IEnumerable<TeamDto> teams, string ids) CreateTeamCollection
+        (IEnumerable<NewTeamDto> teamCollection)
+    {
+        if (teamCollection is null)
+            throw new TeamCollectionBadRequest();
+
+        var teamEntities = _mapper.Map<IEnumerable<Team>>(teamCollection);
+        foreach (var team in teamEntities)
+        {
+            _repository.Team.CreateTeam(team);
+        }
+
+        _repository.Save();
+
+        var teamCollectionToReturn =
+       _mapper.Map<IEnumerable<TeamDto>>(teamEntities);
+        var ids = string.Join(",", teamCollectionToReturn.Select(t => t.Id));
+
+        return (teams: teamCollectionToReturn, ids: ids);
+    }
 }

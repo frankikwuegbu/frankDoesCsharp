@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using FootballPlayers.Presentation.ModelBinders;
+using Microsoft.AspNetCore.Mvc;
 using Service.Contracts;
 using Shared.DataTransferObjects;
 
@@ -33,5 +34,23 @@ public class TeamsController : ControllerBase
 
         var newTeam = _service.TeamService.CreateTeam(team);
         return CreatedAtRoute("TeamById", new { id = newTeam.Id }, newTeam);
+    }
+
+    [HttpGet("collection/({ids})", Name = "TeamCollection")]
+    public IActionResult GetTeamCollection([ModelBinder(BinderType = typeof(ArrayModelBinder))] IEnumerable<Guid> ids)
+
+    {
+        var teams = _service.TeamService.GetByIds(ids, trackChanges: false);
+
+        return Ok(teams);
+    }
+
+    [HttpPost("collection")]
+    public IActionResult CreateTeamCollection([FromBody]
+        IEnumerable<NewTeamDto> teamCollection)
+    {
+        var result = _service.TeamService.CreateTeamCollection(teamCollection);
+
+        return CreatedAtRoute("TeamCollection", new { result.ids }, result.teams);
     }
 }

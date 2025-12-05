@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Contracts;
 using Entities.Exceptions;
+using Entities.Models;
 using Service.Contracts;
 using Shared.DataTransferObjects;
 
@@ -40,5 +41,21 @@ internal sealed class PlayerService : IPlayerService
 
         var player = _mapper.Map<PlayerDto>(playerDb);
         return player;
+    }
+
+    public PlayerDto CreatePlayer(Guid teamId, CreatePlayerDto createPlayer, bool trackChanges)
+    {
+        var team = _repository.Team.GetTeam(teamId, trackChanges);
+        if (team is null)
+            throw new TeamNotFoundException(teamId);
+
+        var playerEntity = _mapper.Map<Player>(createPlayer);
+
+        _repository.Player.CreatePlayer(teamId, playerEntity);
+        _repository.Save();
+
+        var playerToReturn = _mapper.Map<PlayerDto>(playerEntity);
+
+        return playerToReturn;
     }
 }
