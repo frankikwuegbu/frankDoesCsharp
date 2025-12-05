@@ -1,0 +1,82 @@
+[
+  {
+    "ContainingType": "FootballPlayers.Presentation.Controllers.TeamsController",
+    "Method": "GetTeams",
+    "RelativePath": "api/teams",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FootballPlayers.Presentation.Controllers.TeamsController",
+    "Method": "CreateTeam",
+    "RelativePath": "api/teams",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "team",
+        "Type": "Shared.DataTransferObjects.NewTeamDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FootballPlayers.Presentation.Controllers.TeamsController",
+    "Method": "GetTeam",
+    "RelativePath": "api/teams/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [],
+    "EndpointName": "TeamById"
+  },
+  {
+    "ContainingType": "FootballPlayers.Presentation.Controllers.PlayerController",
+    "Method": "GetPlayersForTeam",
+    "RelativePath": "api/teams/{teamId}/players",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "teamId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FootballPlayers.Presentation.Controllers.PlayerController",
+    "Method": "GetPlayerForTeam",
+    "RelativePath": "api/teams/{teamId}/players/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "teamId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

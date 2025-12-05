@@ -1,0 +1,169 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\frank.io\\source\\repos\\frankDoesCSharp\\FootballPlayers\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B9EAD5C8-42D0-43F0-94A2-5962BD47E0F9}|FootballPlayers.Presentation\\FootballPlayers.Presentation.csproj|c:\\users\\frank.io\\source\\repos\\frankdoescsharp\\footballplayers\\footballplayers.presentation\\controllers\\teamscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9EAD5C8-42D0-43F0-94A2-5962BD47E0F9}|FootballPlayers.Presentation\\FootballPlayers.Presentation.csproj|solutionrelative:footballplayers.presentation\\controllers\\teamscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E38145DF-80CF-4D9F-BEB8-AAAE9B7CC36F}|Service.Contracts\\Service.Contracts.csproj|c:\\users\\frank.io\\source\\repos\\frankdoescsharp\\footballplayers\\service.contracts\\iteamservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E38145DF-80CF-4D9F-BEB8-AAAE9B7CC36F}|Service.Contracts\\Service.Contracts.csproj|solutionrelative:service.contracts\\iteamservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{23E8E0F1-F5DA-478F-A34B-270C73378A4A}|Service\\Service.csproj|c:\\users\\frank.io\\source\\repos\\frankdoescsharp\\footballplayers\\service\\teamservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{23E8E0F1-F5DA-478F-A34B-270C73378A4A}|Service\\Service.csproj|solutionrelative:service\\teamservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C39D3FDA-C670-490F-AE8A-54FD4CDAA9A0}|Repositories\\Repositories.csproj|c:\\users\\frank.io\\source\\repos\\frankdoescsharp\\footballplayers\\repositories\\teamrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C39D3FDA-C670-490F-AE8A-54FD4CDAA9A0}|Repositories\\Repositories.csproj|solutionrelative:repositories\\teamrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E51EAED5-8D50-4331-88CF-712D534056A0}|FootballPlayers\\FootballPlayers.csproj|c:\\users\\frank.io\\source\\repos\\frankdoescsharp\\footballplayers\\footballplayers\\mappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E51EAED5-8D50-4331-88CF-712D534056A0}|FootballPlayers\\FootballPlayers.csproj|solutionrelative:footballplayers\\mappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2D23EFD6-5EC6-481B-99DA-1861EEC78A7A}|Shared\\Shared.csproj|c:\\users\\frank.io\\source\\repos\\frankdoescsharp\\footballplayers\\shared\\datatransferobjects\\newteamdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2D23EFD6-5EC6-481B-99DA-1861EEC78A7A}|Shared\\Shared.csproj|solutionrelative:shared\\datatransferobjects\\newteamdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2D23EFD6-5EC6-481B-99DA-1861EEC78A7A}|Shared\\Shared.csproj|c:\\users\\frank.io\\source\\repos\\frankdoescsharp\\footballplayers\\shared\\datatransferobjects\\teamdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2D23EFD6-5EC6-481B-99DA-1861EEC78A7A}|Shared\\Shared.csproj|solutionrelative:shared\\datatransferobjects\\teamdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{503B8675-0F9D-4277-A919-4A9957822FDB}|Contracts\\Contracts.csproj|c:\\users\\frank.io\\source\\repos\\frankdoescsharp\\footballplayers\\contracts\\iteamrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{503B8675-0F9D-4277-A919-4A9957822FDB}|Contracts\\Contracts.csproj|solutionrelative:contracts\\iteamrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E51EAED5-8D50-4331-88CF-712D534056A0}|FootballPlayers\\FootballPlayers.csproj|c:\\users\\frank.io\\source\\repos\\frankdoescsharp\\footballplayers\\footballplayers\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E51EAED5-8D50-4331-88CF-712D534056A0}|FootballPlayers\\FootballPlayers.csproj|solutionrelative:footballplayers\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "NewTeamDto.cs",
+              "DocumentMoniker": "C:\\Users\\frank.io\\source\\repos\\frankDoesCSharp\\FootballPlayers\\Shared\\DataTransferObjects\\NewTeamDto.cs",
+              "RelativeDocumentMoniker": "Shared\\DataTransferObjects\\NewTeamDto.cs",
+              "ToolTip": "C:\\Users\\frank.io\\source\\repos\\frankDoesCSharp\\FootballPlayers\\Shared\\DataTransferObjects\\NewTeamDto.cs",
+              "RelativeToolTip": "Shared\\DataTransferObjects\\NewTeamDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAABDAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-04T15:21:34.746Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "MappingProfile.cs",
+              "DocumentMoniker": "C:\\Users\\frank.io\\source\\repos\\frankDoesCSharp\\FootballPlayers\\FootballPlayers\\MappingProfile.cs",
+              "RelativeDocumentMoniker": "FootballPlayers\\MappingProfile.cs",
+              "ToolTip": "C:\\Users\\frank.io\\source\\repos\\frankDoesCSharp\\FootballPlayers\\FootballPlayers\\MappingProfile.cs",
+              "RelativeToolTip": "FootballPlayers\\MappingProfile.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-04T15:03:54.465Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "TeamService.cs",
+              "DocumentMoniker": "C:\\Users\\frank.io\\source\\repos\\frankDoesCSharp\\FootballPlayers\\Service\\TeamService.cs",
+              "RelativeDocumentMoniker": "Service\\TeamService.cs",
+              "ToolTip": "C:\\Users\\frank.io\\source\\repos\\frankDoesCSharp\\FootballPlayers\\Service\\TeamService.cs",
+              "RelativeToolTip": "Service\\TeamService.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAowCUAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-04T14:57:14.067Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "TeamRepository.cs",
+              "DocumentMoniker": "C:\\Users\\frank.io\\source\\repos\\frankDoesCSharp\\FootballPlayers\\Repositories\\TeamRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\TeamRepository.cs",
+              "ToolTip": "C:\\Users\\frank.io\\source\\repos\\frankDoesCSharp\\FootballPlayers\\Repositories\\TeamRepository.cs",
+              "RelativeToolTip": "Repositories\\TeamRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-04T14:51:26.867Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ITeamService.cs",
+              "DocumentMoniker": "C:\\Users\\frank.io\\source\\repos\\frankDoesCSharp\\FootballPlayers\\Service.Contracts\\ITeamService.cs",
+              "RelativeDocumentMoniker": "Service.Contracts\\ITeamService.cs",
+              "ToolTip": "C:\\Users\\frank.io\\source\\repos\\frankDoesCSharp\\FootballPlayers\\Service.Contracts\\ITeamService.cs",
+              "RelativeToolTip": "Service.Contracts\\ITeamService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-04T14:48:42.94Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "TeamsController.cs",
+              "DocumentMoniker": "C:\\Users\\frank.io\\source\\repos\\frankDoesCSharp\\FootballPlayers\\FootballPlayers.Presentation\\Controllers\\TeamsController.cs",
+              "RelativeDocumentMoniker": "FootballPlayers.Presentation\\Controllers\\TeamsController.cs",
+              "ToolTip": "C:\\Users\\frank.io\\source\\repos\\frankDoesCSharp\\FootballPlayers\\FootballPlayers.Presentation\\Controllers\\TeamsController.cs",
+              "RelativeToolTip": "FootballPlayers.Presentation\\Controllers\\TeamsController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-04T14:43:16.081Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "TeamDto.cs",
+              "DocumentMoniker": "C:\\Users\\frank.io\\source\\repos\\frankDoesCSharp\\FootballPlayers\\Shared\\DataTransferObjects\\TeamDto.cs",
+              "RelativeDocumentMoniker": "Shared\\DataTransferObjects\\TeamDto.cs",
+              "ToolTip": "C:\\Users\\frank.io\\source\\repos\\frankDoesCSharp\\FootballPlayers\\Shared\\DataTransferObjects\\TeamDto.cs",
+              "RelativeToolTip": "Shared\\DataTransferObjects\\TeamDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAA9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-04T14:48:07.858Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ITeamRepository.cs",
+              "DocumentMoniker": "C:\\Users\\frank.io\\source\\repos\\frankDoesCSharp\\FootballPlayers\\Contracts\\ITeamRepository.cs",
+              "RelativeDocumentMoniker": "Contracts\\ITeamRepository.cs",
+              "ToolTip": "C:\\Users\\frank.io\\source\\repos\\frankDoesCSharp\\FootballPlayers\\Contracts\\ITeamRepository.cs",
+              "RelativeToolTip": "Contracts\\ITeamRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-04T14:50:48.202Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\frank.io\\source\\repos\\frankDoesCSharp\\FootballPlayers\\FootballPlayers\\Program.cs",
+              "RelativeDocumentMoniker": "FootballPlayers\\Program.cs",
+              "ToolTip": "C:\\Users\\frank.io\\source\\repos\\frankDoesCSharp\\FootballPlayers\\FootballPlayers\\Program.cs",
+              "RelativeToolTip": "FootballPlayers\\Program.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAUwB8AAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-01T11:07:56.757Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+﻿using Shared.DataTransferObjects;
+
+namespace Service.Contracts;
+
+public interface IPlayerService
+{
+    IEnumerable<PlayerDto> GetPlayers(Guid teamId, bool trackChanges);
+    PlayerDto GetPlayer(Guid teamId, Guid id, bool trackChanges);
+}
