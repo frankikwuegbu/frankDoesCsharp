@@ -2,6 +2,8 @@ using Contracts;
 using FootballPlayers.Extensions;
 using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Formatters;
+using Microsoft.Extensions.Options;
 using NLog;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -24,7 +26,10 @@ builder.Services.Configure<ApiBehaviorOptions>(options =>
     options.SuppressModelStateInvalidFilter = true;
 });
 
-builder.Services.AddControllers()
+builder.Services.AddControllers(config =>
+{
+    config.InputFormatters.Insert(0, GetJsonPatchInputFormatter());
+})
     .AddApplicationPart(typeof(FootballPlayers.Presentation.AssemblyReference).Assembly);
 
 var app = builder.Build();
@@ -33,6 +38,12 @@ var logger = app.Services.GetRequiredService<ILoggerManager>();
 app.ConfigureExceptionHandler(logger);
 if (app.Environment.IsProduction())
     app.UseHsts();
+
+NewtonsoftJsonPatchInputFormatter GetJsonPatchInputFormatter() =>
+    new ServiceCollection().AddLogging().AddMvc().AddNewtonsoftJson()
+    .Services.BuildServiceProvider()
+    .GetRequiredService<IOptions<MvcOptions>>().Value.InputFormatters
+    .OfType<NewtonsoftJsonPatchInputFormatter>().First();
 
 // Configure the HTTP request pipeline.
 app.UseHttpsRedirection();

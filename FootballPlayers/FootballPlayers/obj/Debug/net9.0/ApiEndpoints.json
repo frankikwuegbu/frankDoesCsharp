@@ -186,6 +186,32 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "FootballPlayers.Presentation.Controllers.PlayerController",
+    "Method": "PartiallyUpdatePlayerForTeam",
+    "RelativePath": "api/teams/{teamId}/players/{id}",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "teamId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "patchDoc",
+        "Type": "Microsoft.AspNetCore.JsonPatch.JsonPatchDocument\u00601[[Shared.DataTransferObjects.PlayerUpdateDto, Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "FootballPlayers.Presentation.Controllers.TeamsController",
     "Method": "CreateTeamCollection",
     "RelativePath": "api/teams/collection",

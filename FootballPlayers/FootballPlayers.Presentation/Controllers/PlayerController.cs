@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.JsonPatch;
+using Microsoft.AspNetCore.Mvc;
 using Service.Contracts;
 using Shared.DataTransferObjects;
 
@@ -58,6 +59,21 @@ public class PlayerController : ControllerBase
         _service.PlayerService.UpdatePlayer(teamId, id, player,
                 compTrackChanges: false, empTrackChanges: true);
 
+        return NoContent();
+    }
+
+    [HttpPatch("{id:guid}")]
+    public IActionResult PartiallyUpdatePlayerForTeam(Guid teamId, Guid id,
+        [FromBody] JsonPatchDocument<PlayerUpdateDto> patchDoc)
+    {
+        if (patchDoc is null)
+            return BadRequest("patchDoc object sent from client is null.");
+        var result = _service.PlayerService.GetPlayerForPatch(teamId, id,
+        compTrackChanges: false,
+        empTrackChanges: true);
+        patchDoc.ApplyTo(result.playerToPatch);
+        _service.PlayerService.SaveChangesForPatch(result.playerToPatch,
+        result.playerEntity);
         return NoContent();
     }
 }

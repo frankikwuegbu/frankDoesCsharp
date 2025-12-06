@@ -1,4 +1,5 @@
-﻿using Shared.DataTransferObjects;
+﻿using Entities.Models;
+using Shared.DataTransferObjects;
 
 namespace Service.Contracts;
 
@@ -10,4 +11,7 @@ public interface IPlayerService
     void DeletePlayer(Guid teamId, Guid id, bool trackChanges);
     void UpdatePlayer(Guid teamId, Guid id,
         PlayerUpdateDto updatedPlayer, bool compTrackChanges, bool empTrackChanges);
+    (PlayerUpdateDto playerToPatch, Player playerEntity) GetPlayerForPatch(
+            Guid teamId, Guid id, bool compTrackChanges, bool empTrackChanges);
+    void SaveChangesForPatch(PlayerUpdateDto playerToPatch, Player playerEntity);
 }

@@ -29,3 +29,5 @@ C:\Users\frank.io\source\repos\frankDoesCSharp\FootballPlayers\Service.Contracts
 C:\Users\frank.io\source\repos\frankDoesCSharp\FootballPlayers\Service.Contracts\obj\Debug\net9.0\refint\Service.Contracts.dll
 C:\Users\frank.io\source\repos\frankDoesCSharp\FootballPlayers\Service.Contracts\obj\Debug\net9.0\Service.Contracts.pdb
 C:\Users\frank.io\source\repos\frankDoesCSharp\FootballPlayers\Service.Contracts\obj\Debug\net9.0\ref\Service.Contracts.dll
+C:\Users\frank.io\source\repos\frankDoesCSharp\FootballPlayers\Service.Contracts\bin\Debug\net9.0\Entities.dll
+C:\Users\frank.io\source\repos\frankDoesCSharp\FootballPlayers\Service.Contracts\bin\Debug\net9.0\Entities.pdb

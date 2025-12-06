@@ -22,5 +22,7 @@ public class MappingProfile : Profile
         CreateMap<PlayerUpdateDto, Player>();
 
         CreateMap<TeamUpdateDto, Team>();
+
+        CreateMap<PlayerUpdateDto, Player>().ReverseMap();
     }
 }

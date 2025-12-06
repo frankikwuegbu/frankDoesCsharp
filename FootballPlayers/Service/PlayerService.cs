@@ -86,4 +86,27 @@ internal sealed class PlayerService : IPlayerService
         _mapper.Map(updatedPlayer, playerEntity);
         _repository.Save();
     }
+
+    public (PlayerUpdateDto playerToPatch, Player playerEntity)
+    GetPlayerForPatch
+        (Guid teamId, Guid id, bool compTrackChanges, bool empTrackChanges)
+    {
+        var team = _repository.Team.GetTeam(teamId, compTrackChanges);
+        if (team is null)
+            throw new TeamNotFoundException(teamId);
+
+        var playerEntity = _repository.Player.GetPlayer(teamId, id, empTrackChanges);
+        if (playerEntity is null)
+            throw new PlayerNotFoundException(teamId);
+
+        var playerToPatch = _mapper.Map<PlayerUpdateDto>(playerEntity);
+
+        return (playerToPatch, playerEntity);
+    }
+
+    public void SaveChangesForPatch(PlayerUpdateDto playerToPatch, Player playerEntity)
+    {
+        _mapper.Map(playerToPatch, playerEntity);
+        _repository.Save();
+    }
 }

@@ -188,6 +188,10 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "dependencies": {
+            "Microsoft.AspNetCore.JsonPatch": {
+              "target": "Package",
+              "version": "[9.0.11, )"
+            },
             "Microsoft.AspNetCore.Mvc.Core": {
               "target": "Package",
               "version": "[2.3.0, )"
@@ -272,6 +276,10 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
+              "target": "Package",
+              "version": "[9.0.11, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[9.0.11, )"
@@ -491,6 +499,9 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
+              "C:\\Users\\frank.io\\source\\repos\\frankDoesCSharp\\FootballPlayers\\Entities\\Entities.csproj": {
+                "projectPath": "C:\\Users\\frank.io\\source\\repos\\frankDoesCSharp\\FootballPlayers\\Entities\\Entities.csproj"
+              },
               "C:\\Users\\frank.io\\source\\repos\\frankDoesCSharp\\FootballPlayers\\Shared\\Shared.csproj": {
                 "projectPath": "C:\\Users\\frank.io\\source\\repos\\frankDoesCSharp\\FootballPlayers\\Shared\\Shared.csproj"
               }

@@ -33,3 +33,5 @@ C:\Users\frank.io\source\repos\frankDoesCSharp\FootballPlayers\FootballPlayers.P
 C:\Users\frank.io\source\repos\frankDoesCSharp\FootballPlayers\FootballPlayers.Presentation\obj\Debug\net9.0\refint\FootballPlayers.Presentation.dll
 C:\Users\frank.io\source\repos\frankDoesCSharp\FootballPlayers\FootballPlayers.Presentation\obj\Debug\net9.0\FootballPlayers.Presentation.pdb
 C:\Users\frank.io\source\repos\frankDoesCSharp\FootballPlayers\FootballPlayers.Presentation\obj\Debug\net9.0\ref\FootballPlayers.Presentation.dll
+C:\Users\frank.io\source\repos\frankDoesCSharp\FootballPlayers\FootballPlayers.Presentation\bin\Debug\net9.0\Entities.dll
+C:\Users\frank.io\source\repos\frankDoesCSharp\FootballPlayers\FootballPlayers.Presentation\bin\Debug\net9.0\Entities.pdb
