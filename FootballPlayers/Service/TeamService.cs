@@ -84,4 +84,14 @@ internal sealed class TeamService : ITeamService
         _repository.Team.DeleteTeam(team);
         _repository.Save();
     }
+
+    public void UpdateTeam(Guid teamId, TeamUpdateDto updatedTeam, bool trackChanges)
+    {
+        var teamEntity = _repository.Team.GetTeam(teamId, trackChanges);
+        if (teamEntity is null)
+            throw new TeamNotFoundException(teamId);
+
+        _mapper.Map(updatedTeam, teamEntity);
+        _repository.Save();
+    }
 }

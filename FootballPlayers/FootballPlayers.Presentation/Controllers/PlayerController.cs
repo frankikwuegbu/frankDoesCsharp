@@ -49,4 +49,15 @@ public class PlayerController : ControllerBase
 
         return NoContent();
     }
+
+    [HttpPut("{id:guid}")]
+    public IActionResult UpdatePlayer(Guid teamId, Guid id, [FromBody] PlayerUpdateDto player)
+    {
+        if (player is null)
+            return BadRequest("PLayerUpdateDto object is null");
+        _service.PlayerService.UpdatePlayer(teamId, id, player,
+                compTrackChanges: false, empTrackChanges: true);
+
+        return NoContent();
+    }
 }

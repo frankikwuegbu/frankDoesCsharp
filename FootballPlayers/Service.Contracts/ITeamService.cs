@@ -11,4 +11,5 @@ public interface ITeamService
     (IEnumerable<TeamDto> teams, string ids) CreateTeamCollection
         (IEnumerable<NewTeamDto> teamCollection);
     void DeleteTeam(Guid teamId, bool trackChanges);
+    void UpdateTeam(Guid teamid, TeamUpdateDto updatedTeam, bool trackChanges);
 }

@@ -60,4 +60,15 @@ public class TeamsController : ControllerBase
         _service.TeamService.DeleteTeam(id, trackChanges: false);
         return NoContent();
     }
+
+    [HttpPut("{id:guid}")]
+    public IActionResult UpdateTeam(Guid id, [FromBody] TeamUpdateDto team)
+    {
+        if (team is null)
+            return BadRequest("TeamUpdateDto object is null");
+
+        _service.TeamService.UpdateTeam(id, team, trackChanges: true);
+
+        return NoContent();
+    }
 }

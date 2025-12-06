@@ -72,4 +72,18 @@ internal sealed class PlayerService : IPlayerService
         _repository.Player.DeletePlayer(playerForTeam);
         _repository.Save();
     }
+
+    public void UpdatePlayer(Guid teamId, Guid id, PlayerUpdateDto updatedPlayer,
+        bool compTrackChanges, bool empTrackChanges)
+    {
+        var team = _repository.Team.GetTeam(teamId, compTrackChanges);
+        if (team is null)
+            throw new TeamNotFoundException(teamId);
+
+        var playerEntity = _repository.Player.GetPlayer(teamId, id, empTrackChanges);
+        if (playerEntity is null)
+            throw new PlayerNotFoundException(id);
+        _mapper.Map(updatedPlayer, playerEntity);
+        _repository.Save();
+    }
 }
