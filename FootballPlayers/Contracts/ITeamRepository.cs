@@ -4,9 +4,9 @@ namespace Contracts;
 
 public interface ITeamRepository
 {
-    IEnumerable<Team> GetAllTeams(bool trackChanges);
-    Team GetTeam(Guid teamId, bool trackChanges);
+    Task<IEnumerable<Team>> GetAllTeamsAsync(bool trackChanges);
+    Task<Team> GetTeamAsync(Guid teamId, bool trackChanges);
     void CreateTeam(Team team);
-    IEnumerable<Team> GetByIds(IEnumerable<Guid> ids, bool trackChanges);
+    Task<IEnumerable<Team>> GetByIdsAsync(IEnumerable<Guid> ids, bool trackChanges);
     void DeleteTeam(Team team);
 }

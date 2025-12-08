@@ -19,23 +19,23 @@ internal sealed class PlayerService : IPlayerService
         _logger = logger;
         _mapper = mapper;
     }
-    public IEnumerable<PlayerDto> GetPlayers(Guid teamId, bool trackChanges)
+    public async Task<IEnumerable<PlayerDto>> GetPlayersAsync(Guid teamId, bool trackChanges)
     {
-        var team = _repository.Team.GetTeam(teamId, trackChanges);
+        var team = await _repository.Team.GetTeamAsync(teamId, trackChanges);
         if (team is null)
             throw new TeamNotFoundException(teamId);
-        var playersfromDb = _repository.Player.GetPlayers(teamId, trackChanges);
+        var playersfromDb = await _repository.Player.GetPlayersAsync(teamId, trackChanges);
 
         var playerDto = _mapper.Map<IEnumerable<PlayerDto>>(playersfromDb);
         return playerDto;
     }
-    public PlayerDto GetPlayer(Guid teamId, Guid id, bool trackChanges)
+    public async Task<PlayerDto> GetPlayerAsync(Guid teamId, Guid id, bool trackChanges)
     {
-        var team = _repository.Team.GetTeam(teamId, trackChanges);
+        var team = await _repository.Team.GetTeamAsync(teamId, trackChanges);
         if (team is null)
             throw new TeamNotFoundException(teamId);
 
-        var playerDb = _repository.Player.GetPlayer(teamId, id, trackChanges);
+        var playerDb = await _repository.Player.GetPlayerAsync(teamId, id, trackChanges);
         if (playerDb is null)
             throw new PlayerNotFoundException(id);
 
@@ -43,59 +43,59 @@ internal sealed class PlayerService : IPlayerService
         return player;
     }
 
-    public PlayerDto CreatePlayer(Guid teamId, CreatePlayerDto createPlayer, bool trackChanges)
+    public async Task<PlayerDto> CreatePlayerAsync(Guid teamId, CreatePlayerDto createPlayer, bool trackChanges)
     {
-        var team = _repository.Team.GetTeam(teamId, trackChanges);
+        var team = await _repository.Team.GetTeamAsync(teamId, trackChanges);
         if (team is null)
             throw new TeamNotFoundException(teamId);
 
         var playerEntity = _mapper.Map<Player>(createPlayer);
 
         _repository.Player.CreatePlayer(teamId, playerEntity);
-        _repository.Save();
+        await _repository.SaveAsync();
 
         var playerToReturn = _mapper.Map<PlayerDto>(playerEntity);
 
         return playerToReturn;
     }
 
-    public void DeletePlayer(Guid teamId, Guid id, bool trackChanges)
+    public async Task DeletePlayerAsync(Guid teamId, Guid id, bool trackChanges)
     {
-        var team = _repository.Team.GetTeam(teamId, trackChanges);
+        var team = await _repository.Team.GetTeamAsync(teamId, trackChanges);
         if (team is null)
             throw new TeamNotFoundException(teamId);
 
-        var playerForTeam = _repository.Player.GetPlayer(teamId, id, trackChanges);
+        var playerForTeam = await _repository.Player.GetPlayerAsync(teamId, id, trackChanges);
         if (playerForTeam is null)
             throw new PlayerNotFoundException(id);
 
         _repository.Player.DeletePlayer(playerForTeam);
-        _repository.Save();
+        await _repository.SaveAsync();
     }
 
-    public void UpdatePlayer(Guid teamId, Guid id, PlayerUpdateDto updatedPlayer,
+    public async Task UpdatePlayerAsync(Guid teamId, Guid id, PlayerUpdateDto updatedPlayer,
         bool compTrackChanges, bool empTrackChanges)
     {
-        var team = _repository.Team.GetTeam(teamId, compTrackChanges);
+        var team = await _repository.Team.GetTeamAsync(teamId, compTrackChanges);
         if (team is null)
             throw new TeamNotFoundException(teamId);
 
-        var playerEntity = _repository.Player.GetPlayer(teamId, id, empTrackChanges);
+        var playerEntity = await _repository.Player.GetPlayerAsync(teamId, id, empTrackChanges);
         if (playerEntity is null)
             throw new PlayerNotFoundException(id);
         _mapper.Map(updatedPlayer, playerEntity);
-        _repository.Save();
+        await _repository.SaveAsync();
     }
 
-    public (PlayerUpdateDto playerToPatch, Player playerEntity)
-    GetPlayerForPatch
+    public async Task<(PlayerUpdateDto playerToPatch, Player playerEntity)>
+    GetPlayerForPatchAsync
         (Guid teamId, Guid id, bool compTrackChanges, bool empTrackChanges)
     {
-        var team = _repository.Team.GetTeam(teamId, compTrackChanges);
+        var team = await _repository.Team.GetTeamAsync(teamId, compTrackChanges);
         if (team is null)
             throw new TeamNotFoundException(teamId);
 
-        var playerEntity = _repository.Player.GetPlayer(teamId, id, empTrackChanges);
+        var playerEntity = await _repository.Player.GetPlayerAsync(teamId, id, empTrackChanges);
         if (playerEntity is null)
             throw new PlayerNotFoundException(teamId);
 
@@ -104,9 +104,9 @@ internal sealed class PlayerService : IPlayerService
         return (playerToPatch, playerEntity);
     }
 
-    public void SaveChangesForPatch(PlayerUpdateDto playerToPatch, Player playerEntity)
+    public async Task SaveChangesForPatchAsync(PlayerUpdateDto playerToPatch, Player playerEntity)
     {
         _mapper.Map(playerToPatch, playerEntity);
-        _repository.Save();
+        await _repository.SaveAsync();
     }
 }

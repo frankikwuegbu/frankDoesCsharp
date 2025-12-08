@@ -4,8 +4,8 @@ namespace Contracts;
 
 public interface IPlayerRepository
 {
-    IEnumerable<Player> GetPlayers(Guid teamId, bool trackChanges);
-    Player GetPlayer(Guid teamId, Guid id, bool trackChanges);
+    Task<IEnumerable<Player>> GetPlayersAsync(Guid teamId, bool trackChanges);
+    Task<Player> GetPlayerAsync(Guid teamId, Guid id, bool trackChanges);
     void CreatePlayer(Guid teamId, Player player);
     void DeletePlayer(Player player);
 }

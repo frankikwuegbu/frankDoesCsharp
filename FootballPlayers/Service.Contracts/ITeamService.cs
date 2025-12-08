@@ -4,12 +4,12 @@ namespace Service.Contracts;
 
 public interface ITeamService
 {
-    IEnumerable<TeamDto> GetAllTeams(bool trackChanges);
-    TeamDto GetTeam(Guid teamId, bool trackChanges);
-    TeamDto CreateTeam(NewTeamDto team);
-    IEnumerable<TeamDto> GetByIds(IEnumerable<Guid> ids, bool trackChanges);
-    (IEnumerable<TeamDto> teams, string ids) CreateTeamCollection
+    Task<IEnumerable<TeamDto>> GetAllTeamsAsync(bool trackChanges);
+    Task<TeamDto> GetTeamAsync(Guid teamId, bool trackChanges);
+    Task<TeamDto> CreateTeamAsync(NewTeamDto team);
+    Task<IEnumerable<TeamDto>> GetByIdsAsync(IEnumerable<Guid> ids, bool trackChanges);
+    Task<(IEnumerable<TeamDto> teams, string ids)> CreateTeamCollectionAsync
         (IEnumerable<NewTeamDto> teamCollection);
-    void DeleteTeam(Guid teamId, bool trackChanges);
-    void UpdateTeam(Guid teamid, TeamUpdateDto updatedTeam, bool trackChanges);
+    Task DeleteTeamAsync(Guid teamId, bool trackChanges);
+    Task UpdateTeamAsync(Guid teamid, TeamUpdateDto updatedTeam, bool trackChanges);
 }

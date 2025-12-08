@@ -1,5 +1,6 @@
 ﻿using Entities.Models;
 using Contracts;
+using Microsoft.EntityFrameworkCore;
 namespace Repositories;
 
 public class PlayerRepository : RepositoryBase<Player>, IPlayerRepository
@@ -8,13 +9,13 @@ public class PlayerRepository : RepositoryBase<Player>, IPlayerRepository
     {
     }
 
-    public IEnumerable<Player> GetPlayers(Guid teamId, bool trackChanges) =>
-        FindByCondition(p => p.TeamId.Equals(teamId), trackChanges)
-        .OrderBy(p => p.Name).ToList();
+    public async Task<IEnumerable<Player>> GetPlayersAsync(Guid teamId, bool trackChanges) =>
+        await FindByCondition(p => p.TeamId.Equals(teamId), trackChanges)
+        .OrderBy(p => p.Name).ToListAsync();
 
-    public Player GetPlayer(Guid teamId, Guid id, bool trackChanges) =>
-        FindByCondition(p => p.TeamId.Equals(teamId) && p.Id.Equals(id), trackChanges)
-        .SingleOrDefault();
+    public async Task<Player> GetPlayerAsync(Guid teamId, Guid id, bool trackChanges) =>
+        await FindByCondition(p => p.TeamId.Equals(teamId) && p.Id.Equals(id), trackChanges)
+        .SingleOrDefaultAsync();
 
     public void CreatePlayer(Guid teamId, Player player)
     {

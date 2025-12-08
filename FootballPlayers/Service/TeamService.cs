@@ -19,15 +19,15 @@ internal sealed class TeamService : ITeamService
         _logger = logger;
         _mapper = mapper;
     }
-    public IEnumerable<TeamDto> GetAllTeams(bool trackChanges)
+    public async Task<IEnumerable<TeamDto>> GetAllTeamsAsync(bool trackChanges)
     {
-        var teams = _repository.Team.GetAllTeams(trackChanges);
+        var teams = await _repository.Team.GetAllTeamsAsync(trackChanges);
         var teamDto = _mapper.Map<IEnumerable<TeamDto>>(teams);
         return teamDto;
     }
-    public TeamDto GetTeam(Guid id, bool trackChanges)
+    public async Task<TeamDto> GetTeamAsync(Guid id, bool trackChanges)
     {
-        var team = _repository.Team.GetTeam(id, trackChanges);
+        var team = await _repository.Team.GetTeamAsync(id, trackChanges);
         if (team is null)
             throw new TeamNotFoundException(id);
 
@@ -35,27 +35,27 @@ internal sealed class TeamService : ITeamService
         return teamDto;
     }
 
-    public TeamDto CreateTeam(NewTeamDto team)
+    public async Task<TeamDto> CreateTeamAsync(NewTeamDto team)
     {
         var teamEntity = _mapper.Map<Team>(team);
         _repository.Team.CreateTeam(teamEntity);
-        _repository.Save();
+        await _repository.SaveAsync();
         var teamToReturn = _mapper.Map<TeamDto>(teamEntity);
         return teamToReturn;
     }
 
-    public IEnumerable<TeamDto> GetByIds(IEnumerable<Guid> ids, bool trackChanges)
+    public async Task<IEnumerable<TeamDto>> GetByIdsAsync(IEnumerable<Guid> ids, bool trackChanges)
     {
         if (ids is null)
             throw new IdParametersBadRequestException();
-        var teamEntities = _repository.Team.GetByIds(ids, trackChanges);
+        var teamEntities = await _repository.Team.GetByIdsAsync(ids, trackChanges);
         if (ids.Count() != teamEntities.Count())
             throw new CollectionByIdsBadRequestException();
         var teamsToReturn = _mapper.Map<IEnumerable<TeamDto>>(teamEntities);
         return teamsToReturn;
     }
 
-    public (IEnumerable<TeamDto> teams, string ids) CreateTeamCollection
+    public async Task<(IEnumerable<TeamDto> teams, string ids)> CreateTeamCollectionAsync
         (IEnumerable<NewTeamDto> teamCollection)
     {
         if (teamCollection is null)
@@ -67,7 +67,7 @@ internal sealed class TeamService : ITeamService
             _repository.Team.CreateTeam(team);
         }
 
-        _repository.Save();
+        await _repository.SaveAsync();
 
         var teamCollectionToReturn =
        _mapper.Map<IEnumerable<TeamDto>>(teamEntities);
@@ -76,22 +76,22 @@ internal sealed class TeamService : ITeamService
         return (teams: teamCollectionToReturn, ids: ids);
     }
 
-    public void DeleteTeam(Guid teamId, bool trackChanges)
+    public async Task DeleteTeamAsync(Guid teamId, bool trackChanges)
     {
-        var team = _repository.Team.GetTeam(teamId, trackChanges);
+        var team = await _repository.Team.GetTeamAsync(teamId, trackChanges);
         if (team is null)
             throw new TeamNotFoundException(teamId);
         _repository.Team.DeleteTeam(team);
-        _repository.Save();
+        await _repository.SaveAsync();
     }
 
-    public void UpdateTeam(Guid teamId, TeamUpdateDto updatedTeam, bool trackChanges)
+    public async Task UpdateTeamAsync(Guid teamId, TeamUpdateDto updatedTeam, bool trackChanges)
     {
-        var teamEntity = _repository.Team.GetTeam(teamId, trackChanges);
+        var teamEntity = await _repository.Team.GetTeamAsync(teamId, trackChanges);
         if (teamEntity is null)
             throw new TeamNotFoundException(teamId);
 
         _mapper.Map(updatedTeam, teamEntity);
-        _repository.Save();
+        await _repository.SaveAsync();
     }
 }

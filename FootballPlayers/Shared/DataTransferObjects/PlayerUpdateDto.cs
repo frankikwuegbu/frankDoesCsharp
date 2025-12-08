@@ -1,3 +1,3 @@
 ﻿namespace Shared.DataTransferObjects;
 
-public record PlayerUpdateDto(string Name, int Age, string Position);
+public record PlayerUpdateDto : PlayerForManipulationDto;

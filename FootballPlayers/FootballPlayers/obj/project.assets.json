@@ -2142,6 +2142,7 @@
         "dependencies": {
           "Microsoft.AspNetCore.JsonPatch": "9.0.11",
           "Microsoft.AspNetCore.Mvc.Core": "2.3.0",
+          "Microsoft.AspNetCore.Mvc.NewtonsoftJson": "9.0.11",
           "Service.Contracts": "1.0.0"
         },
         "compile": {
@@ -5874,7 +5875,6 @@
     "net9.0": [
       "FootballPlayers.Presentation >= 1.0.0",
       "LoggerService >= 1.0.0",
-      "Microsoft.AspNetCore.Mvc.NewtonsoftJson >= 9.0.11",
       "Microsoft.EntityFrameworkCore >= 9.0.11",
       "Microsoft.EntityFrameworkCore.SqlServer >= 9.0.11",
       "Microsoft.EntityFrameworkCore.Tools >= 9.0.11",
@@ -5945,10 +5945,6 @@
       "net9.0": {
         "targetAlias": "net9.0",
         "dependencies": {
-          "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
-            "target": "Package",
-            "version": "[9.0.11, )"
-          },
           "Microsoft.EntityFrameworkCore": {
             "target": "Package",
             "version": "[9.0.11, )"

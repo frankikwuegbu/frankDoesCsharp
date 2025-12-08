@@ -10,7 +10,6 @@
         "dependencies": {
           "FootballPlayers.Presentation": "1.0.0",
           "LoggerService": "1.0.0",
-          "Microsoft.AspNetCore.Mvc.NewtonsoftJson": "9.0.11",
           "Microsoft.EntityFrameworkCore": "9.0.11",
           "Microsoft.EntityFrameworkCore.SqlServer": "9.0.11",
           "Microsoft.EntityFrameworkCore.Tools": "9.0.11",
@@ -1246,6 +1245,7 @@
         "dependencies": {
           "Microsoft.AspNetCore.JsonPatch": "9.0.11",
           "Microsoft.AspNetCore.Mvc.Core": "2.3.0",
+          "Microsoft.AspNetCore.Mvc.NewtonsoftJson": "9.0.11",
           "Service.Contracts": "1.0.0"
         },
         "runtime": {

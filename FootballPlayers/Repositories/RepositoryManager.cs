@@ -18,5 +18,5 @@ public sealed class RepositoryManager : IRepositoryManager
     public ITeamRepository Team => _teamRepository.Value;
     public IPlayerRepository Player => _playerRepository.Value;
 
-    public void Save() => _repositoryContext.SaveChanges();
+    public async Task SaveAsync() => await _repositoryContext.SaveChangesAsync();
 }

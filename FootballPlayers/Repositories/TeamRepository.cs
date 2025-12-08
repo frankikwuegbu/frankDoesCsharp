@@ -1,5 +1,6 @@
 ﻿using Contracts;
 using Entities.Models;
+using Microsoft.EntityFrameworkCore;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
 namespace Repositories;
@@ -9,20 +10,20 @@ public class TeamRepository : RepositoryBase<Team>, ITeamRepository
     public TeamRepository(RepositoryContext repositoryContext) : base(repositoryContext)
     {
     }
-    public IEnumerable<Team> GetAllTeams(bool trackChanges) =>
-        FindAll(trackChanges)
+    public async Task<IEnumerable<Team>> GetAllTeamsAsync(bool trackChanges) =>
+        await FindAll(trackChanges)
         .OrderBy(t => t.Name)
-        .ToList();
+        .ToListAsync();
 
-    public Team GetTeam(Guid teamId, bool trackChanges) =>
-        FindByCondition(t => t.Id.Equals(teamId), trackChanges)
-        .SingleOrDefault();
+    public async Task<Team> GetTeamAsync(Guid teamId, bool trackChanges) =>
+        await FindByCondition(t => t.Id.Equals(teamId), trackChanges)
+        .SingleOrDefaultAsync();
 
     public void CreateTeam(Team team) => Create(team);
 
-    public IEnumerable<Team> GetByIds(IEnumerable<Guid> ids, bool trackChanges) =>
-        FindByCondition(x => ids.Contains(x.Id), trackChanges)
-        .ToList();
+    public async Task<IEnumerable<Team>> GetByIdsAsync(IEnumerable<Guid> ids, bool trackChanges) =>
+        await FindByCondition(x => ids.Contains(x.Id), trackChanges)
+        .ToListAsync();
 
     public void DeleteTeam(Team team) => Delete(team);
 }

@@ -5,13 +5,13 @@ namespace Service.Contracts;
 
 public interface IPlayerService
 {
-    IEnumerable<PlayerDto> GetPlayers(Guid teamId, bool trackChanges);
-    PlayerDto GetPlayer(Guid teamId, Guid id, bool trackChanges);
-    PlayerDto CreatePlayer(Guid teamId, CreatePlayerDto createPlayer, bool trackChanges);
-    void DeletePlayer(Guid teamId, Guid id, bool trackChanges);
-    void UpdatePlayer(Guid teamId, Guid id,
+    Task<IEnumerable<PlayerDto>> GetPlayersAsync(Guid teamId, bool trackChanges);
+    Task<PlayerDto> GetPlayerAsync(Guid teamId, Guid id, bool trackChanges);
+    Task<PlayerDto> CreatePlayerAsync(Guid teamId, CreatePlayerDto createPlayer, bool trackChanges);
+    Task DeletePlayerAsync(Guid teamId, Guid id, bool trackChanges);
+    Task UpdatePlayerAsync(Guid teamId, Guid id,
         PlayerUpdateDto updatedPlayer, bool compTrackChanges, bool empTrackChanges);
-    (PlayerUpdateDto playerToPatch, Player playerEntity) GetPlayerForPatch(
+    Task<(PlayerUpdateDto playerToPatch, Player playerEntity)> GetPlayerForPatchAsync(
             Guid teamId, Guid id, bool compTrackChanges, bool empTrackChanges);
-    void SaveChangesForPatch(PlayerUpdateDto playerToPatch, Player playerEntity);
+    Task SaveChangesForPatchAsync(PlayerUpdateDto playerToPatch, Player playerEntity);
 }
