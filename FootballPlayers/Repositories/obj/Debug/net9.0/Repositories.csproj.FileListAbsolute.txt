@@ -33,3 +33,5 @@ C:\Users\frank.io\source\repos\frankDoesCSharp\FootballPlayers\Repositories\obj\
 C:\Users\frank.io\source\repos\frankDoesCSharp\FootballPlayers\Repositories\obj\Debug\net9.0\refint\Repositories.dll
 C:\Users\frank.io\source\repos\frankDoesCSharp\FootballPlayers\Repositories\obj\Debug\net9.0\Repositories.pdb
 C:\Users\frank.io\source\repos\frankDoesCSharp\FootballPlayers\Repositories\obj\Debug\net9.0\ref\Repositories.dll
+C:\Users\frank.io\source\repos\frankDoesCSharp\FootballPlayers\Repositories\bin\Debug\net9.0\Shared.dll
+C:\Users\frank.io\source\repos\frankDoesCSharp\FootballPlayers\Repositories\bin\Debug\net9.0\Shared.pdb

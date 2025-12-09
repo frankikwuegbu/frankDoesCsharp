@@ -4,6 +4,7 @@ using Entities.Exceptions;
 using Entities.Models;
 using Service.Contracts;
 using Shared.DataTransferObjects;
+using Shared.RequestFeatures;
 
 namespace Service;
 
@@ -19,12 +20,12 @@ internal sealed class PlayerService : IPlayerService
         _logger = logger;
         _mapper = mapper;
     }
-    public async Task<IEnumerable<PlayerDto>> GetPlayersAsync(Guid teamId, bool trackChanges)
+    public async Task<IEnumerable<PlayerDto>> GetPlayersAsync(Guid teamId, PlayerParameters playerParameters, bool trackChanges)
     {
         var team = await _repository.Team.GetTeamAsync(teamId, trackChanges);
         if (team is null)
             throw new TeamNotFoundException(teamId);
-        var playersfromDb = await _repository.Player.GetPlayersAsync(teamId, trackChanges);
+        var playersfromDb = await _repository.Player.GetPlayersAsync(teamId, playerParameters, trackChanges);
 
         var playerDto = _mapper.Map<IEnumerable<PlayerDto>>(playersfromDb);
         return playerDto;

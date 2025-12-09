@@ -33,3 +33,5 @@ C:\Users\frank.io\source\repos\frankDoesCSharp\FootballPlayers\LoggerService\obj
 C:\Users\frank.io\source\repos\frankDoesCSharp\FootballPlayers\LoggerService\obj\Debug\net9.0\refint\LoggerService.dll
 C:\Users\frank.io\source\repos\frankDoesCSharp\FootballPlayers\LoggerService\obj\Debug\net9.0\LoggerService.pdb
 C:\Users\frank.io\source\repos\frankDoesCSharp\FootballPlayers\LoggerService\obj\Debug\net9.0\ref\LoggerService.dll
+C:\Users\frank.io\source\repos\frankDoesCSharp\FootballPlayers\LoggerService\bin\Debug\net9.0\Shared.dll
+C:\Users\frank.io\source\repos\frankDoesCSharp\FootballPlayers\LoggerService\bin\Debug\net9.0\Shared.pdb

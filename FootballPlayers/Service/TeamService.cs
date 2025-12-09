@@ -19,6 +19,16 @@ internal sealed class TeamService : ITeamService
         _logger = logger;
         _mapper = mapper;
     }
+
+    private async Task<Team> GetTeamAndCheckExistence(Guid id, bool trackChanges)
+    {
+        var team = await _repository.Team.GetTeamAsync(id, trackChanges);
+
+        if (team is null)
+            throw new TeamNotFoundException(id);
+        return team;
+    }
+
     public async Task<IEnumerable<TeamDto>> GetAllTeamsAsync(bool trackChanges)
     {
         var teams = await _repository.Team.GetAllTeamsAsync(trackChanges);
@@ -27,9 +37,7 @@ internal sealed class TeamService : ITeamService
     }
     public async Task<TeamDto> GetTeamAsync(Guid id, bool trackChanges)
     {
-        var team = await _repository.Team.GetTeamAsync(id, trackChanges);
-        if (team is null)
-            throw new TeamNotFoundException(id);
+        var team = await GetTeamAndCheckExistence(id, trackChanges);
 
         var teamDto = _mapper.Map<TeamDto>(team);
         return teamDto;
@@ -78,20 +86,16 @@ internal sealed class TeamService : ITeamService
 
     public async Task DeleteTeamAsync(Guid teamId, bool trackChanges)
     {
-        var team = await _repository.Team.GetTeamAsync(teamId, trackChanges);
-        if (team is null)
-            throw new TeamNotFoundException(teamId);
+        var team = await GetTeamAndCheckExistence(teamId, trackChanges);
         _repository.Team.DeleteTeam(team);
         await _repository.SaveAsync();
     }
 
     public async Task UpdateTeamAsync(Guid teamId, TeamUpdateDto updatedTeam, bool trackChanges)
     {
-        var teamEntity = await _repository.Team.GetTeamAsync(teamId, trackChanges);
-        if (teamEntity is null)
-            throw new TeamNotFoundException(teamId);
+        var team = await GetTeamAndCheckExistence(teamId, trackChanges);
 
-        _mapper.Map(updatedTeam, teamEntity);
+        _mapper.Map(updatedTeam, team);
         await _repository.SaveAsync();
     }
 }

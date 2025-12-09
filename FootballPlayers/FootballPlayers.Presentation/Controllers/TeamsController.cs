@@ -27,14 +27,9 @@ public class TeamsController : ControllerBase
     }
 
     [HttpPost]
+    [ServiceFilter(typeof(ValidationFilterAttribute))]
     public async Task<IActionResult> CreateTeam([FromBody] NewTeamDto team)
     {
-        if (team is null)
-            return BadRequest("NewTeamDto object is null");
-
-        if (!ModelState.IsValid)
-            return UnprocessableEntity(ModelState);
-
         var newTeam = await _service.TeamService.CreateTeamAsync(team);
         return CreatedAtRoute("TeamById", new { id = newTeam.Id }, newTeam);
     }
@@ -65,14 +60,9 @@ public class TeamsController : ControllerBase
     }
 
     [HttpPut("{id:guid}")]
+    [ServiceFilter(typeof(ValidationFilterAttribute))]
     public async Task<IActionResult> UpdateTeam(Guid id, [FromBody] TeamUpdateDto team)
     {
-        if (team is null)
-            return BadRequest("TeamUpdateDto object is null");
-
-        if (!ModelState.IsValid)
-            return UnprocessableEntity(ModelState);
-
         await _service.TeamService.UpdateTeamAsync(id, team, trackChanges: true);
 
         return NoContent();

@@ -34,6 +34,9 @@
             "projectReferences": {
               "C:\\Users\\frank.io\\source\\repos\\frankDoesCSharp\\FootballPlayers\\Entities\\Entities.csproj": {
                 "projectPath": "C:\\Users\\frank.io\\source\\repos\\frankDoesCSharp\\FootballPlayers\\Entities\\Entities.csproj"
+              },
+              "C:\\Users\\frank.io\\source\\repos\\frankDoesCSharp\\FootballPlayers\\Shared\\Shared.csproj": {
+                "projectPath": "C:\\Users\\frank.io\\source\\repos\\frankDoesCSharp\\FootballPlayers\\Shared\\Shared.csproj"
               }
             }
           }

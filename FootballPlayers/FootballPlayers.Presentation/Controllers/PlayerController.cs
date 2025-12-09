@@ -1,7 +1,9 @@
-﻿using Microsoft.AspNetCore.JsonPatch;
+﻿using Entities.Exceptions;
+using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
 using Service.Contracts;
 using Shared.DataTransferObjects;
+using Shared.RequestFeatures;
 
 namespace FootballPlayers.Presentation.Controllers;
 
@@ -13,9 +15,12 @@ public class PlayerController : ControllerBase
     public PlayerController(IServiceManager service) => _service = service;
 
     [HttpGet]
-    public async Task<IActionResult> GetPlayersForTeam(Guid teamId)
+    public async Task<IActionResult> GetPlayersForTeam(Guid teamId, [FromQuery] PlayerParameters playerParameters)
     {
-        var players = await _service.PlayerService.GetPlayersAsync(teamId, trackChanges: false);
+        if (!playerParameters.ValidAgeRange)
+            throw new MaxAgeRangeBadRequestException();
+
+        var players = await _service.PlayerService.GetPlayersAsync(teamId, playerParameters, trackChanges: false);
         return Ok(players);
     }
 
@@ -27,14 +32,9 @@ public class PlayerController : ControllerBase
     }
 
     [HttpPost]
+    [ServiceFilter(typeof(ValidationFilterAttribute))]
     public async Task<IActionResult> CreatePlayer(Guid teamId, [FromBody] CreatePlayerDto player)
     {
-        if (player is null)
-            return BadRequest("CreatePlayerDto object is null");
-
-        if (!ModelState.IsValid) 
-            return UnprocessableEntity(ModelState);
-
         var playerToReturn =
             await _service.PlayerService.CreatePlayerAsync(teamId, player, trackChanges: false);
 
@@ -55,14 +55,9 @@ public class PlayerController : ControllerBase
     }
 
     [HttpPut("{id:guid}")]
+    [ServiceFilter(typeof(ValidationFilterAttribute))]
     public async Task<IActionResult> UpdatePlayer(Guid teamId, Guid id, [FromBody] PlayerUpdateDto player)
     {
-        if (player is null)
-            return BadRequest("PlayerUpdateDto object is null");
-
-        if (!ModelState.IsValid)
-            return UnprocessableEntity(ModelState);
-
         await _service.PlayerService.UpdatePlayerAsync(teamId, id, player,
                 compTrackChanges: false, empTrackChanges: true);
 
