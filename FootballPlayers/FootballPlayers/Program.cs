@@ -1,5 +1,6 @@
 using Contracts;
 using FootballPlayers.Extensions;
+using FootballPlayers.Presentation.ActionFilters;
 using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Formatters;
@@ -26,12 +27,14 @@ builder.Services.Configure<ApiBehaviorOptions>(options =>
     options.SuppressModelStateInvalidFilter = true;
 });
 
+builder.Services.AddScoped<ValidateMediaTypeAttribute>();
 builder.Services.AddScoped<ValidationFilterAttribute>();
 builder.Services.AddControllers(config =>
 {
     config.InputFormatters.Insert(0, GetJsonPatchInputFormatter());
 })
     .AddApplicationPart(typeof(FootballPlayers.Presentation.AssemblyReference).Assembly);
+builder.Services.AddCustomMediaTypes();
 
 var app = builder.Build();
 

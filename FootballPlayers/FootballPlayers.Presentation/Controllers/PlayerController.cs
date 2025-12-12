@@ -1,4 +1,5 @@
 ﻿using Entities.Exceptions;
+using FootballPlayers.Presentation.ActionFilters;
 using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
 using Service.Contracts;
@@ -15,6 +16,7 @@ public class PlayerController : ControllerBase
     public PlayerController(IServiceManager service) => _service = service;
 
     [HttpGet]
+    [ServiceFilter(typeof(ValidateMediaTypeAttribute))]
     public async Task<IActionResult> GetPlayersForTeam(Guid teamId, [FromQuery] PlayerParameters playerParameters)
     {
         if (!playerParameters.ValidAgeRange)

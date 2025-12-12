@@ -14,6 +14,7 @@ public class PlayerRepository : RepositoryBase<Player>, IPlayerRepository
     public async Task<IEnumerable<Player>> GetPlayersAsync(Guid teamId, PlayerParameters playerParameters, bool trackChanges) =>
         await FindByCondition(p => p.TeamId.Equals(teamId), trackChanges)
         .FilterPlayers(playerParameters.MinAge, playerParameters.MaxAge)
+        .Sort(playerParameters.OrderBy)
         .Search(playerParameters.SearchTerm)
         .OrderBy(p => p.Name)
         .Skip((playerParameters.PageNumber - 1) * playerParameters.PageSize)
