@@ -1,40 +1,33 @@
 ﻿namespace WinFormsCalculator.Logic;
 
+public enum Operator
+{
+    Add,
+    Subtract,
+    Multiply,
+    Divide
+}
+
 public class CalculatorEngine
 {
     public double FirstValue { get; set; }
     public double SecondValue { get; set; }
-    //public enum Operators { addition, subtraction, multiplication, division }
-    //public Operators Operation { get; set; }
-
-    public string? Operator { get; set; }
+    public Operator Operator { get; set; }
     public double Result { get; set; }
 
-    public void Calculations()
+    public void SetOperator(Operator o)
     {
-        switch (Operator)
+        Operator = o;
+    }
+    public double Calculations()
+    {
+        return Operator switch
         {
-            case "+":
-                Result = FirstValue + SecondValue;
-                break;
-            case "-":
-                Result = FirstValue - SecondValue;
-                break;
-            case "*":
-                Result = FirstValue * SecondValue;
-                break;
-            case "/":
-                if (SecondValue != 0)
-                {
-                    Result = FirstValue / SecondValue;
-                }
-                else
-                {
-                    throw new DivideByZeroException("Cannot divide by zero.");
-                }
-                break;
-            default:
-                throw new InvalidOperationException("Invalid operator.");
-        }
+            Operator.Add => FirstValue + SecondValue,
+            Operator.Subtract => FirstValue - SecondValue,
+            Operator.Multiply => FirstValue * SecondValue,
+            Operator.Divide => FirstValue / SecondValue,
+            _ => 0
+        };
     }
 }
