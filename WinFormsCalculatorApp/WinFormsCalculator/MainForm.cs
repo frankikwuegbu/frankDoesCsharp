@@ -4,7 +4,8 @@ namespace WinFormsCalculator;
 
 public partial class MainForm : Form
 {
-    private CalculatorEngine calculatorEngine = new CalculatorEngine(); 
+    private CalculatorEngine calculatorEngine;
+    private FirstValueHolder holdFirstValue;
 
     public MainForm()
     {
@@ -14,6 +15,9 @@ public partial class MainForm : Form
         subtractbtn.Tag = Operator.Subtract;
         mulbtn.Tag = Operator.Multiply;
         divbtn.Tag = Operator.Divide;
+
+        calculatorEngine = new CalculatorEngine();
+        holdFirstValue = new FirstValueHolder(calculatorEngine);
     }
 
     private void screenNumbers(object sender, EventArgs e)
@@ -24,11 +28,7 @@ public partial class MainForm : Form
 
     private void clickOperator(object sender, EventArgs e)
     {
-        Button operatorButtons = (Button)sender;
-        Operator btn = (Operator)operatorButtons.Tag;
-        calculatorEngine.SetOperator(btn);
-        calculatorEngine.FirstValue = double.Parse(calculatorScreen.Text);
-        calculatorScreen.Clear();
+        holdFirstValue.FirstValueCalculation(sender, calculatorScreen);
     }
 
     private void clickEvaluate(object sender, EventArgs e)

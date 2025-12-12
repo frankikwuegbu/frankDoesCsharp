@@ -11,12 +11,16 @@
       "RelativeMoniker": "D:0:0:{02A885B1-1619-48C1-BB08-26B4A5C9C6D5}|WinFormsCalculator\\WinFormsCalculator.csproj|solutionrelative:winformscalculator\\logic\\calculatorengine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{02A885B1-1619-48C1-BB08-26B4A5C9C6D5}|WinFormsCalculator\\WinFormsCalculator.csproj|C:\\Users\\frank.io\\source\\repos\\frankDoesCSharp\\WinFormsCalculatorApp\\winformscalculator\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{02A885B1-1619-48C1-BB08-26B4A5C9C6D5}|WinFormsCalculator\\WinFormsCalculator.csproj|solutionrelative:winformscalculator\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{02A885B1-1619-48C1-BB08-26B4A5C9C6D5}|WinFormsCalculator\\WinFormsCalculator.csproj|c:\\users\\frank.io\\source\\repos\\frankdoescsharp\\winformscalculatorapp\\winformscalculator\\logic\\firstvalueholder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{02A885B1-1619-48C1-BB08-26B4A5C9C6D5}|WinFormsCalculator\\WinFormsCalculator.csproj|solutionrelative:winformscalculator\\logic\\firstvalueholder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{02A885B1-1619-48C1-BB08-26B4A5C9C6D5}|WinFormsCalculator\\WinFormsCalculator.csproj|c:\\users\\frank.io\\source\\repos\\frankdoescsharp\\winformscalculatorapp\\winformscalculator\\mainform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{02A885B1-1619-48C1-BB08-26B4A5C9C6D5}|WinFormsCalculator\\WinFormsCalculator.csproj|solutionrelative:winformscalculator\\mainform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{02A885B1-1619-48C1-BB08-26B4A5C9C6D5}|WinFormsCalculator\\WinFormsCalculator.csproj|C:\\Users\\frank.io\\source\\repos\\frankDoesCSharp\\WinFormsCalculatorApp\\winformscalculator\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{02A885B1-1619-48C1-BB08-26B4A5C9C6D5}|WinFormsCalculator\\WinFormsCalculator.csproj|solutionrelative:winformscalculator\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,7 +30,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -35,6 +39,19 @@
             {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "FirstValueHolder.cs",
+              "DocumentMoniker": "C:\\Users\\frank.io\\source\\repos\\frankDoesCSharp\\WinFormsCalculatorApp\\WinFormsCalculator\\Logic\\FirstValueHolder.cs",
+              "RelativeDocumentMoniker": "WinFormsCalculator\\Logic\\FirstValueHolder.cs",
+              "ToolTip": "C:\\Users\\frank.io\\source\\repos\\frankDoesCSharp\\WinFormsCalculatorApp\\WinFormsCalculator\\Logic\\FirstValueHolder.cs",
+              "RelativeToolTip": "WinFormsCalculator\\Logic\\FirstValueHolder.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAA8AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-12T15:49:20.56Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "MainForm.cs [Design]",
               "DocumentMoniker": "C:\\Users\\frank.io\\source\\repos\\frankDoesCSharp\\WinFormsCalculatorApp\\WinFormsCalculator\\MainForm.cs",
               "RelativeDocumentMoniker": "WinFormsCalculator\\MainForm.cs",
@@ -65,7 +82,7 @@
               "RelativeDocumentMoniker": "WinFormsCalculator\\Logic\\CalculatorEngine.cs",
               "ToolTip": "C:\\Users\\frank.io\\source\\repos\\frankDoesCSharp\\WinFormsCalculatorApp\\WinFormsCalculator\\Logic\\CalculatorEngine.cs",
               "RelativeToolTip": "WinFormsCalculator\\Logic\\CalculatorEngine.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAKAAAAAAAAAA==",
+              "ViewState": "AgIAAAwAAAAAAAAAAAA1wBMAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-12T08:11:50.153Z",
               "EditorCaption": ""
@@ -78,7 +95,7 @@
               "RelativeDocumentMoniker": "WinFormsCalculator\\MainForm.cs",
               "ToolTip": "C:\\Users\\frank.io\\source\\repos\\frankDoesCSharp\\WinFormsCalculatorApp\\WinFormsCalculator\\MainForm.cs",
               "RelativeToolTip": "WinFormsCalculator\\MainForm.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACUAAABLAAAAAAAAAA==",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAAwAYAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-11T13:27:04.303Z",
               "EditorCaption": ""
