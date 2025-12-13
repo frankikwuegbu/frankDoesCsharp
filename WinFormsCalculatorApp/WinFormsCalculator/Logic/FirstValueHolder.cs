@@ -1,12 +1,12 @@
-﻿namespace WinFormsCalculator.Logic;
+﻿using System.Security.Cryptography.X509Certificates;
 
-public class FirstValueHolder(CalculatorEngine ce)
+namespace WinFormsCalculator.Logic;
+
+public class FirstValueHolder(CalculatorEngine engine)
 {
-    public Operator Operator { get; set; }
+    private CalculatorEngine calculatorEngine = engine;
 
-    private CalculatorEngine calculatorEngine = ce;
-
-    public double FirstValueCalculation(object obj, TextBox textbox)
+    public double SetFirstValueSetOperator(object obj, TextBox textbox)
     {
         if (textbox.Text != "")
         {
@@ -23,7 +23,5 @@ public class FirstValueHolder(CalculatorEngine ce)
             MessageBox.Show("Please enter a number first.");
             return 0;
         }
-
-
     }
 }
