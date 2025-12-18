@@ -1,3 +1,4 @@
+using System.Text.RegularExpressions;
 using WinFormsCalculator.Logic;
 
 namespace WinFormsCalculator;
@@ -5,7 +6,6 @@ namespace WinFormsCalculator;
 public partial class MainForm : Form
 {
     private CalculatorEngine calculatorEngine;
-    private FirstValueHolder holdFirstValue;
 
     public MainForm()
     {
@@ -19,35 +19,32 @@ public partial class MainForm : Form
 
         //class instantiation
         calculatorEngine = new CalculatorEngine();
-        holdFirstValue = new FirstValueHolder(calculatorEngine);
     }
 
-    //digit buttons event handler
+    //event handlers
     private void screenNumbers(object sender, EventArgs e)
     {
         Button pressedButton = (Button)sender;
+        string numberOnScreen = pressedButton.Text;
+        calculatorEngine.HoldValues(numberOnScreen);
         calculatorScreen.Text += pressedButton.Text;
     }
 
-    //operator buttons event handler
     private void clickOperator(object sender, EventArgs e)
     {
-        holdFirstValue.SetFirstValueSetOperator(sender, calculatorScreen);
+        calculatorEngine.OneOperatorRule(sender, calculatorScreen);
     }
 
-    //= button event handler
     private void clickEvaluate(object sender, EventArgs e)
     {
-        calculatorEngine.SecondValue = double.Parse(calculatorScreen.Text);
-        calculatorEngine.Calculations();
-        calculatorScreen.Text = calculatorEngine.Calculations().ToString();
+        var result = calculatorEngine.Calculations();
+        calculatorScreen.Text = result.ToString();
+        calculatorEngine.FirstValue = result;
+        calculatorEngine.SecondValue = 0;
     }
 
-    //clear button event handler
     private void clickClear(object sender, EventArgs e)
     {
-        calculatorEngine.FirstValue = 0;
-        calculatorEngine.SecondValue = 0;
-        calculatorScreen.Clear();
+        calculatorEngine.ClearMemory(calculatorScreen);
     }
 }

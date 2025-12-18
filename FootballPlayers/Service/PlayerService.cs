@@ -1,10 +1,12 @@
 ﻿using AutoMapper;
 using Contracts;
 using Entities.Exceptions;
+using Entities.LinkModels;
 using Entities.Models;
 using Service.Contracts;
 using Shared.DataTransferObjects;
 using Shared.RequestFeatures;
+using System.ComponentModel.Design;
 
 namespace Service;
 
@@ -13,22 +15,30 @@ internal sealed class PlayerService : IPlayerService
     private readonly IRepositoryManager _repository;
     private readonly ILoggerManager _logger;
     private readonly IMapper _mapper;
+    private readonly IPlayerLinks _playerLinks;
 
-    public PlayerService(IRepositoryManager repository, ILoggerManager logger, IMapper mapper)
+    public PlayerService(IRepositoryManager repository, ILoggerManager logger, IMapper mapper, IPlayerLinks playerLinks)
     {
         _repository = repository;
         _logger = logger;
         _mapper = mapper;
+        _playerLinks = playerLinks;
     }
-    public async Task<IEnumerable<PlayerDto>> GetPlayersAsync(Guid teamId, PlayerParameters playerParameters, bool trackChanges)
+    public async Task<(LinkResponse linkResponse, IEnumerable<PlayerDto>)> GetPlayersAsync(Guid teamId,
+        LinkParameters linkParameters, bool trackChanges)
     {
+        if (!linkParameters.PlayerParameters.ValidAgeRange)
+            throw new MaxAgeRangeBadRequestException();
+
         var team = await _repository.Team.GetTeamAsync(teamId, trackChanges);
         if (team is null)
             throw new TeamNotFoundException(teamId);
-        var playersfromDb = await _repository.Player.GetPlayersAsync(teamId, playerParameters, trackChanges);
 
+        var playersfromDb = await _repository.Player.GetPlayersAsync(teamId, linkParameters.PlayerParameters, trackChanges);
         var playerDto = _mapper.Map<IEnumerable<PlayerDto>>(playersfromDb);
-        return playerDto;
+        var links = _playerLinks.TryGenerateLinks(playerDto, teamId, linkParameters.Context);
+
+        return (linkResponse: links, playerDto);
     }
     public async Task<PlayerDto> GetPlayerAsync(Guid teamId, Guid id, bool trackChanges)
     {

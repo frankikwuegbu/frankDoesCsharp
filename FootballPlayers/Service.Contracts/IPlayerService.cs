@@ -1,4 +1,5 @@
-﻿using Entities.Models;
+﻿using Entities.LinkModels;
+using Entities.Models;
 using Shared.DataTransferObjects;
 using Shared.RequestFeatures;
 
@@ -6,7 +7,7 @@ namespace Service.Contracts;
 
 public interface IPlayerService
 {
-    Task<IEnumerable<PlayerDto>> GetPlayersAsync(Guid teamId, PlayerParameters playerParameters, bool trackChanges);
+    Task<(LinkResponse linkResponse, IEnumerable<PlayerDto>)> GetPlayersAsync(Guid teamId, LinkParameters linkParameters, bool trackChanges);
     Task<PlayerDto> GetPlayerAsync(Guid teamId, Guid id, bool trackChanges);
     Task<PlayerDto> CreatePlayerAsync(Guid teamId, CreatePlayerDto createPlayer, bool trackChanges);
     Task DeletePlayerAsync(Guid teamId, Guid id, bool trackChanges);

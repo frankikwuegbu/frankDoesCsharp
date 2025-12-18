@@ -1,6 +1,7 @@
 using Contracts;
 using FootballPlayers.Extensions;
 using FootballPlayers.Presentation.ActionFilters;
+using FootballPlayers.Utility;
 using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Formatters;
@@ -20,6 +21,7 @@ builder.Services.ConfigureRepositoryManager();
 builder.Services.ConfigureServiceManager();
 builder.Services.ConfigureSqlContext(builder.Configuration);
 builder.Services.AddAutoMapper(typeof(Program));
+builder.Services.AddScoped<IPlayerLinks, PlayerLinks>();
 
 // Add services to the container.
 builder.Services.Configure<ApiBehaviorOptions>(options =>

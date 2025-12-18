@@ -103,7 +103,11 @@
         "frameworks": {
           "net9.0": {
             "targetAlias": "net9.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\frank.io\\source\\repos\\frankDoesCSharp\\FootballPlayers\\Shared\\Shared.csproj": {
+                "projectPath": "C:\\Users\\frank.io\\source\\repos\\frankDoesCSharp\\FootballPlayers\\Shared\\Shared.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -121,6 +125,12 @@
       "frameworks": {
         "net9.0": {
           "targetAlias": "net9.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Mvc.Abstractions": {
+              "target": "Package",
+              "version": "[2.3.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

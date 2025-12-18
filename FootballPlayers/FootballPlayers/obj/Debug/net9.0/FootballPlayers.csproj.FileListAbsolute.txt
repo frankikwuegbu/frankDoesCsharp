@@ -367,3 +367,4 @@ C:\Users\frank.io\source\repos\frankDoesCSharp\FootballPlayers\FootballPlayers\b
 C:\Users\frank.io\source\repos\frankDoesCSharp\FootballPlayers\FootballPlayers\bin\Debug\net9.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 C:\Users\frank.io\source\repos\frankDoesCSharp\FootballPlayers\FootballPlayers\bin\Debug\net9.0\Newtonsoft.Json.dll
 C:\Users\frank.io\source\repos\frankDoesCSharp\FootballPlayers\FootballPlayers\bin\Debug\net9.0\Newtonsoft.Json.Bson.dll
+C:\Users\frank.io\source\repos\frankDoesCSharp\FootballPlayers\FootballPlayers\bin\Debug\net9.0\System.Linq.Dynamic.Core.dll

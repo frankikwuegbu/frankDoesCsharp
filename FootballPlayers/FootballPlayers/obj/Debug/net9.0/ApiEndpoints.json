@@ -121,6 +121,11 @@
         "Name": "PageSize",
         "Type": "System.Int32",
         "IsRequired": false
+      },
+      {
+        "Name": "OrderBy",
+        "Type": "System.String",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []
@@ -187,7 +192,8 @@
         "IsRequired": true
       }
     ],
-    "ReturnTypes": []
+    "ReturnTypes": [],
+    "EndpointName": "DeletePlayerForTeam"
   },
   {
     "ContainingType": "FootballPlayers.Presentation.Controllers.PlayerController",
@@ -213,7 +219,8 @@
         "IsRequired": true
       }
     ],
-    "ReturnTypes": []
+    "ReturnTypes": [],
+    "EndpointName": "UpdatePlayerForTeam"
   },
   {
     "ContainingType": "FootballPlayers.Presentation.Controllers.PlayerController",
@@ -239,7 +246,8 @@
         "IsRequired": true
       }
     ],
-    "ReturnTypes": []
+    "ReturnTypes": [],
+    "EndpointName": "PartiallyUpdatePlayerForTeam"
   },
   {
     "ContainingType": "FootballPlayers.Presentation.Controllers.TeamsController",

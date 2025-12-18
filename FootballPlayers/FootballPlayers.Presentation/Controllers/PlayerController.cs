@@ -1,4 +1,5 @@
 ﻿using Entities.Exceptions;
+using Entities.LinkModels;
 using FootballPlayers.Presentation.ActionFilters;
 using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
@@ -19,11 +20,11 @@ public class PlayerController : ControllerBase
     [ServiceFilter(typeof(ValidateMediaTypeAttribute))]
     public async Task<IActionResult> GetPlayersForTeam(Guid teamId, [FromQuery] PlayerParameters playerParameters)
     {
-        if (!playerParameters.ValidAgeRange)
-            throw new MaxAgeRangeBadRequestException();
+        var linkParams = new LinkParameters(playerParameters, HttpContext);
+        var players = await _service.PlayerService.GetPlayersAsync(teamId, linkParams, trackChanges: false);
 
-        var players = await _service.PlayerService.GetPlayersAsync(teamId, playerParameters, trackChanges: false);
-        return Ok(players);
+        //return Ok(players);
+        return players.linkResponse.HasLinks ? Ok(players.linkResponse.LinkedEntities) : Ok(players);
     }
 
     [HttpGet("{id:guid}", Name = "GetPlayer")]
@@ -48,7 +49,7 @@ public class PlayerController : ControllerBase
             playerToReturn);
     }
 
-    [HttpDelete("{id:guid}")]
+    [HttpDelete("{id:guid}", Name = "DeletePlayerForTeam")]
     public async Task<IActionResult> DeletePlayer(Guid teamId, Guid id)
     {
         await _service.PlayerService.DeletePlayerAsync(teamId, id, trackChanges: false);
@@ -56,7 +57,7 @@ public class PlayerController : ControllerBase
         return NoContent();
     }
 
-    [HttpPut("{id:guid}")]
+    [HttpPut("{id:guid}", Name  = "UpdatePlayerForTeam")]
     [ServiceFilter(typeof(ValidationFilterAttribute))]
     public async Task<IActionResult> UpdatePlayer(Guid teamId, Guid id, [FromBody] PlayerUpdateDto player)
     {
@@ -66,7 +67,7 @@ public class PlayerController : ControllerBase
         return NoContent();
     }
 
-    [HttpPatch("{id:guid}")]
+    [HttpPatch("{id:guid}", Name = "PartiallyUpdatePlayerForTeam")]
     public async Task<IActionResult> PartiallyUpdatePlayerForTeam(Guid teamId, Guid id,
         [FromBody] JsonPatchDocument<PlayerUpdateDto> patchDoc)
     {

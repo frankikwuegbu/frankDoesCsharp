@@ -53,6 +53,7 @@
             calculatorScreen.Name = "calculatorScreen";
             calculatorScreen.Size = new Size(393, 41);
             calculatorScreen.TabIndex = 0;
+            calculatorScreen.Click += clickOperator;
             // 
             // button1
             // 
@@ -246,7 +247,6 @@
             Margin = new Padding(5, 4, 5, 4);
             Name = "MainForm";
             Text = "Calculator";
-            Click += clickOperator;
             ResumeLayout(false);
             PerformLayout();
         }
