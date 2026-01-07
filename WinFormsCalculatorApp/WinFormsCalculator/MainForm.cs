@@ -27,7 +27,7 @@ public partial class MainForm : Form
         Button pressedButton = (Button)sender;
         string numberOnScreen = pressedButton.Text;
         calculatorEngine.HoldValues(numberOnScreen);
-        calculatorScreen.Text += pressedButton.Text;
+        calculatorScreen.Text += numberOnScreen;
     }
 
     private void clickOperator(object sender, EventArgs e)

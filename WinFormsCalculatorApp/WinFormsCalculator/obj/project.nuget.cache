@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "Pob7L4DXiZ8=",
+  "dgSpecHash": "cALmeZvojjs=",
   "success": true,
   "projectFilePath": "C:\\Users\\frank.io\\source\\repos\\frankDoesCSharp\\WinFormsCalculatorApp\\WinFormsCalculator\\WinFormsCalculator.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\frank.io\\.nuget\\packages\\fluentassertions\\8.8.0\\fluentassertions.8.8.0.nupkg.sha512",
+    "C:\\Users\\frank.io\\.nuget\\packages\\xunit.abstractions\\2.0.3\\xunit.abstractions.2.0.3.nupkg.sha512",
+    "C:\\Users\\frank.io\\.nuget\\packages\\xunit.extensibility.core\\2.9.3\\xunit.extensibility.core.2.9.3.nupkg.sha512"
+  ],
   "logs": []
 }

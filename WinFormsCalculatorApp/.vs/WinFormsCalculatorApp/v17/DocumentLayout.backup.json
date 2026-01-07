@@ -40,7 +40,7 @@
               "RelativeDocumentMoniker": "WinFormsCalculator\\MainForm.cs",
               "ToolTip": "C:\\Users\\frank.io\\source\\repos\\frankDoesCSharp\\WinFormsCalculatorApp\\WinFormsCalculator\\MainForm.cs",
               "RelativeToolTip": "WinFormsCalculator\\MainForm.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADEAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-11T13:27:04.303Z",
               "EditorCaption": ""
@@ -64,7 +64,7 @@
               "RelativeDocumentMoniker": "WinFormsCalculator\\Logic\\CalculatorEngine.cs",
               "ToolTip": "C:\\Users\\frank.io\\source\\repos\\frankDoesCSharp\\WinFormsCalculatorApp\\WinFormsCalculator\\Logic\\CalculatorEngine.cs",
               "RelativeToolTip": "WinFormsCalculator\\Logic\\CalculatorEngine.cs",
-              "ViewState": "AgIAABcAAAAAAAAAAAAswA8AAAAxAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-12T08:11:50.153Z",
               "EditorCaption": ""
@@ -79,8 +79,7 @@
               "RelativeToolTip": "WinFormsCalculator\\MainForm.Designer.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-11T11:05:47.229Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-11T11:05:47.229Z"
             }
           ]
         }

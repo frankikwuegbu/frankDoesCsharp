@@ -32,3 +32,4 @@ C:\Users\frank.io\source\repos\frankDoesCSharp\LoginPageDemo\bin\Debug\net9.0\Mi
 C:\Users\frank.io\source\repos\frankDoesCSharp\LoginPageDemo\obj\Debug\net9.0\loginpagedemo.csproj.AssemblyReference.cache
 C:\Users\frank.io\source\repos\frankDoesCSharp\LoginPageDemo\obj\Debug\net9.0\loginpagedemo.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\frank.io\source\repos\frankDoesCSharp\LoginPageDemo\obj\Debug\net9.0\loginpag.B73FC1F9.Up2Date
+C:\Users\frank.io\source\repos\frankDoesCSharp\LoginPageDemo\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
